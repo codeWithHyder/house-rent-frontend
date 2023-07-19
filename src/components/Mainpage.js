@@ -20,7 +20,7 @@ const MainPage = () => {
       <ul className="main-page">
         {houses.map((house) => (
           <li key={house.id}>
-             <img src={house.imageUrl} />
+            <img src={house.imageUrl} alt={house.title} />
             {/* Replace the link with React Router Link */}
             <a href={`/house/${house.id}`}>
               <div className="house-item">
