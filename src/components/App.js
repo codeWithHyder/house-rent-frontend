@@ -7,8 +7,8 @@ import '../style.css';
 function App() {
   return (
     <div className="main-container">
+      <h1 className="rent-house">Rent a House</h1>
       <Navigation />
-      <h1>Rent a House</h1>
       <MainPage />
     </div>
   );

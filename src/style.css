@@ -91,3 +91,10 @@ body {
   height: 100%;
   border-radius: 10rem;
 }
+
+.rent-house {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 900;
+  width: 100%;
+}
