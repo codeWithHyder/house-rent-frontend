@@ -1,19 +1,14 @@
 // Navigation.js
 import React from 'react';
 
-const Navigation = () => {
-  return (
-    <nav>
-      <ul>
-        <li><a href="#">Motorcycles</a></li>
-        <li><a href="#">Doctors</a></li>
-        <li><a href="#">Classes</a></li>
-        <li><a href="#">Items</a></li>
-        <li><a href="#">Reserve</a></li>
-        <li><a href="#">My Reservations</a></li>
-      </ul>
-    </nav>
-  );
-}
+const Navigation = () => (
+  <nav>
+    <ul>
+      <li><a href="#m">House</a></li>
+      <li><a href="#d">Reserveform</a></li>
+      <li><a href="#c">MyReservations</a></li>
+    </ul>
+  </nav>
+);
 
 export default Navigation;

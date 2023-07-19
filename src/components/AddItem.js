@@ -11,9 +11,10 @@ const AddItem = () => {
 
   return (
     <form onSubmit={handleAddItem}>
-      <label>
+      <label htmlFor="name">
         Item Name:
         <input
+          id="name"
           type="text"
           value={itemName}
           onChange={(e) => setItemName(e.target.value)}
@@ -23,6 +24,6 @@ const AddItem = () => {
       <button type="submit">Add Item</button>
     </form>
   );
-}
+};
 
 export default AddItem;

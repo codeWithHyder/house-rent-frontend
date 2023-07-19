@@ -1,10 +1,10 @@
 // App.js
 import React from 'react';
-import Navigation from './components/Navigation';
-import Login from './components/Login';
-import Reserve from './components/Reserve';
-import Details from './components/Details';
-import AddItem from './components/AddItem';
+import Navigation from './Navigation';
+import Login from './Login';
+import Reserve from './Reserve';
+import Details from './Details';
+import AddItem from './AddItem';
 
 function App() {
   return (

@@ -9,9 +9,9 @@ const Details = () => {
   return (
     <div>
       {/* Item details content here */}
-      <button onClick={handleReserve}>Reserve</button>
+      <button type="submit" onClick={handleReserve}>Reserve</button>
     </div>
   );
-}
+};
 
 export default Details;

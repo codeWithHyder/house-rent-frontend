@@ -11,9 +11,10 @@ const Login = () => {
 
   return (
     <form onSubmit={handleLogin}>
-      <label>
+      <label htmlFor="uname">
         Username:
         <input
+          id="uname"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -23,6 +24,6 @@ const Login = () => {
       <button type="submit">Log In</button>
     </form>
   );
-}
+};
 
 export default Login;

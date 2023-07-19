@@ -12,18 +12,20 @@ const Reserve = () => {
 
   return (
     <form onSubmit={handleReserve}>
-      <label>
+      <label htmlFor="dt">
         Date:
         <input
+          id="dt"
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
         />
       </label>
-      <label>
+      <label htmlFor="city">
         City:
         <input
+          id="city"
           type="text"
           value={city}
           onChange={(e) => setCity(e.target.value)}
@@ -33,6 +35,6 @@ const Reserve = () => {
       <button type="submit">Reserve</button>
     </form>
   );
-}
+};
 
 export default Reserve;
