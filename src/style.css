@@ -1,0 +1,45 @@
+/* code will be implemented soon */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  height: 5rem;
+  background-color: cadetblue;
+  list-style: none;
+  padding: 1rem;
+  align-items: center;
+}
+
+.navbar li {
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.navbar li a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: whitesmoke;
+}
+
+.navbar li img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 3rem;
+}
+
+.main-container {
+  background-color: darkgrey;
+  height: 70rem;
+  width: 100%;
+}
+
+.main-container h1 {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 900;
+  margin-top: 2rem;
+}

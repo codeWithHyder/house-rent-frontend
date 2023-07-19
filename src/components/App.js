@@ -1,20 +1,13 @@
 // App.js
 import React from 'react';
 import Navigation from './Navigation';
-import Login from './Login';
-import Reserve from './Reserve';
-import Details from './Details';
-import AddItem from './AddItem';
+import '../style.css';
 
 function App() {
   return (
-    <div>
+    <div className="main-container">
       <Navigation />
-      <Login />
-      <Reserve />
-      <Details />
-      <AddItem />
-      {/* Main content goes here */}
+      <h1>RENT A HOUSE</h1>
     </div>
   );
 }
