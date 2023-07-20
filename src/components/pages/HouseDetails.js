@@ -2,10 +2,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate  } from 'react-router-dom';
+// import MainPage from './Mainpage';
 
 const HouseDetails = () => {
   // const houseId = match.params.id;
+  const navigate = useNavigate();
   const detailData = useSelector((state) => state.house.houseData);
   const { id } = useParams();
   const house = detailData.find((house) => house.id === parseInt(id, 10));
@@ -22,11 +24,13 @@ const HouseDetails = () => {
 
   return (
     <div className="house-details">
-      <img src={house.imageUrl} alt={house.title} />
+      <div class="image-section">
+      <img className="dis-img" src={house.imageUrl} alt={house.title} />
+      </div>
       <div className="house-info">
-        <h3>{house.title}</h3>
+        <h3 className="house-title">{house.title}</h3>
         <p>{house.description}</p>
-        <p>
+        {/* <p>
           Number of days stay:
           {house.numDaysStay}
         </p>
@@ -37,10 +41,11 @@ const HouseDetails = () => {
         <p>
           Total amount due:
           {house.numDaysStay * house.ratePerDay}
-        </p>
-        <button type="button" onClick={handleBookHouse}>
+        </p> */}
+        <button className="btn-book" type="button" onClick={handleBookHouse}>
           Book House
         </button>
+         <button className="btn-book" type="button" onClick={() => navigate('/')}> Back to Main </button>
       </div>
     </div>
   );

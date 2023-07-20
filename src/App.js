@@ -10,6 +10,7 @@ function App() {
 
     <div className="main-container">
       <Navigation />
+      <h1 className="rent-house">Home Stay</h1>
       <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />

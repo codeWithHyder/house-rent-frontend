@@ -29,7 +29,7 @@ body {
   align-items: center;
   position: fixed;
   margin-top: 2.8rem;
-  border-right: 0.01px solid grey;
+  border-right: 0.01px solid whitesmoke;
 }
 
 .navbar li {
@@ -65,6 +65,7 @@ body {
   margin-left: 20%;
   position: absolute;
   column-gap: 1rem;
+  row-gap: 3rem;
   padding-left: 1rem;
   padding-top: 2rem;
   margin-top: 2rem;
@@ -81,10 +82,12 @@ body {
   background-color: rgb(199, 180, 180);
 }
 
-.main-page li img {
+.main-page li .img-house1{
   width: 100%;
   height: 100%;
   border-radius: 10rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .rent-house {
@@ -96,12 +99,50 @@ body {
   position: fixed;
   z-index: 1;
   margin-bottom: 13rem;
-  border-bottom: 0.01px solid grey;
+  border-bottom: 0.01px solid whitesmoke;
 }
 
 .house-details {
-  width: 100%;
+  width: 80%; 
+  display: grid;
+  grid-template-columns: 50% 30%;
+  column-gap: 10rem;
+  margin-left: 21%;
+  position: absolute;
+  margin-top: 1rem;
+}
+
+.image-section {
   display: flex;
-  justify-content: space-around;
-  gap: 5%;
+  width:70%; 
+  height: 50%;
+  margin-top: 3rem;
+}
+
+.image-section .dis-img {
+  width: 42rem;
+  height: 40rem;
+  border-radius: 1rem;
+}
+
+.house-info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  row-gap: 0.3rem;
+  margin-top: 3rem; 
+}
+
+.house-info .house-title {
+  font-family: sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
+
+.house-info .btn-book {
+  height: 3rem;
+  width: 20rem;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 600;
 }
