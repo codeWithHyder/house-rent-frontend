@@ -19,7 +19,7 @@ body {
 }
 
 .navbar {
-  display: flex;
+  display: none;
   flex-direction: column;
   height: 100%;
   width: 20%;
@@ -97,4 +97,16 @@ body {
   z-index: 1;
   margin-bottom: 13rem;
   border-bottom: 0.01px solid grey;
+}
+
+.house-details {
+  
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 5%;
+}
+
+.house-info {
+  
 }

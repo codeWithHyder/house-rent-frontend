@@ -1,11 +1,15 @@
+/* eslint-disable */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 
-const HouseDetails = ({ match }) => {
-  const houseId = match.params.id;
-  const house = useSelector((state) => state.houses.find((house) => house.id === houseId));
-
+const HouseDetails = () => {
+  // const houseId = match.params.id;
+  const detailData = useSelector((state) => state.house.houseData);
+  const { id } = useParams();
+  const house = detailData.find((house) => house.id === parseInt(id, 10));
+  console.log(house);
   if (!house) {
     return <div>House not found</div>;
   }

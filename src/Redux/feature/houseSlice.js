@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const houseDat = [
+const houseData = [
   {
     id: 1,
     title: 'Beautiful House 1',
@@ -61,7 +61,7 @@ const houseDat = [
 ];
 
 const initialState = {
-  houseData: houseDat,
+  houseData,
   isLoading: true,
 };
 
