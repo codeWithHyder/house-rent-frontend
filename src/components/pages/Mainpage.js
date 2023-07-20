@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setHouses } from '../redux/actions';
+import { setHouses } from '../../Redux/actions';
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const MainPage = () => {
   useEffect(() => {
     // Simulate API call to get house data
     // Replace this with actual API call in your project
-    import('../redux/houseData').then((module) => {
+    import('../../houseData').then((module) => {
       dispatch(setHouses(module.default));
     });
   }, [dispatch]);
