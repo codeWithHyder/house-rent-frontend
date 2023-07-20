@@ -61,15 +61,30 @@ const houseData = [
 ];
 
 const initialState = {
-  houseData,
-  isLoading: true,
+  isLoading: false,
+  detailData: houseData,
+  error: '',
 };
 
-const houseSlice = createSlice({
-  name: 'house',
+const detailsSlice = createSlice({
+  name: 'details',
   initialState,
+  reducer: {
+
+  },
+//   extraReducers: (builder) => {
+//     builder.addCase(getDetails.pending, (state) => {
+//       state.isLoading = true;
+//     });
+//     builder.addCase(getDetails.fulfilled, (state, action) => {
+//       state.isLoading = false;
+//       state.detailData = action.payload;
+//     });
+//     builder.addCase(getDetails.rejected, (state, action) => {
+//       state.isLoading = false;
+//       state.error = action.error.message;
+//     });
+//   },
 });
 
-// console.log(cartSlice);
-
-export default houseSlice.reducer;
+export default detailsSlice.reducer;

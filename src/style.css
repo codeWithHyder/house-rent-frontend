@@ -98,3 +98,10 @@ body {
   margin-bottom: 13rem;
   border-bottom: 0.01px solid grey;
 }
+
+.house-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 5%;
+}
