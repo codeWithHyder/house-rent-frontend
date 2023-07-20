@@ -35,5 +35,5 @@ const MainPage = () => {
       </ul>
     </>
   );
-}
+};
 export default MainPage;
