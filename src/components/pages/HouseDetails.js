@@ -16,10 +16,9 @@ const HouseDetails = () => {
     return <div>House not found</div>;
   }
 
-  const handleBookHouse = () => {
-    // Implement your booking logic here
-    // You can store booking information in Redux or send it to the server
-    // console.log('Booking house:', house);
+  const handleReserve = () => {
+    // Navigate to ReservePage with the selected house data as state
+    navigate(`/reserve/${house.id}`, { state: { house } });
   };
 
   return (
@@ -30,20 +29,8 @@ const HouseDetails = () => {
       <div className="house-info">
         <h3 className="house-title">{house.title}</h3>
         <p>{house.description}</p>
-        {/* <p>
-          Number of days stay:
-          {house.numDaysStay}
-        </p>
-        <p>
-          Rate per day:
-          {house.ratePerDay}
-        </p>
-        <p>
-          Total amount due:
-          {house.numDaysStay * house.ratePerDay}
-        </p> */}
-        <button className="btn-book" type="button" onClick={handleBookHouse}>
-          Book House
+        <button className="btn-book" type="button" onClick={handleReserve}>
+          Reserve House
         </button>
          <button className="btn-book" type="button" onClick={() => navigate('/')}> Back to Main </button>
       </div>

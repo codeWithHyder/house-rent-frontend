@@ -79,7 +79,7 @@ body {
   list-style: none;
   padding: 0.4rem;
   margin-bottom: 5rem;
-  background-color: rgb(199, 180, 180);
+  background-color: rgb(230, 220, 220);
 }
 
 .main-page li .img-house1 {
@@ -140,6 +140,41 @@ body {
 }
 
 .house-info .btn-book {
+  height: 3rem;
+  width: 20rem;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 600;
+}
+
+.reserve-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  position: absolute;
+  margin-left: 22%;
+  row-gap: 1.5rem;
+}
+
+.reserve-page .reserve-img {
+  width: 45rem;
+  height: 40rem;
+  border-radius: 2rem;
+}
+
+.reserve-page .house-id span,
+.reserve-page .house-title span {
+  font-family: sans-serif;
+  font-weight: 700;
+  color: green;
+}
+
+.reserve-hs {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.btn-reserve {
   height: 3rem;
   width: 20rem;
   cursor: pointer;
