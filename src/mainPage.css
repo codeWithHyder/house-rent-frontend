@@ -78,7 +78,7 @@ li {
   outline: whitesmoke;
   cursor: pointer;
   margin-top: 2rem;
-  margin-left: 3rem;
+  margin-left: 0;
   border-radius: 1rem;
   color: whitesmoke;
   position: relative;
