@@ -81,8 +81,6 @@ li {
   margin-left: 3rem;
   border-radius: 1rem;
   color: whitesmoke;
-
-  /* Updated styles for the button */
   position: relative;
   bottom: 1rem;
   left: 50%;
@@ -91,7 +89,7 @@ li {
 
 .btn-details:hover {
   background-color: rgb(25, 212, 25);
-  transition: 1s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 @keyframes slide {
