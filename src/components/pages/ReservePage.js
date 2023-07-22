@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
 const ReservePage = () => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
+  const [ratePerDay, setRatePerDay] = useState(0);
+  const [daysStay, setDaysStay] = useState(0);
+  const [amountDue, setAmountDue] = useState(0);
 
   //   const currentUser = useSelector((state) => state.currentUser);
   const location = useLocation();
@@ -17,6 +20,21 @@ const ReservePage = () => {
   const handleCityChange = (e) => {
     setSelectedCity(e.target.value);
   };
+
+  const handleRatePerDayChange = (e) => {
+    setRatePerDay(e.target.value);
+  };
+
+  const handleDaysStayChange = (e) => {
+    setDaysStay(e.target.value);
+  };
+
+  useEffect(() => {
+    const rate = parseFloat(ratePerDay);
+    const days = parseFloat(daysStay);
+    const due = rate * days;
+    setAmountDue(due);
+  }, [ratePerDay, daysStay]);
 
   const handleReserve = () => {
     // Implement your reservation logic here
@@ -31,7 +49,6 @@ const ReservePage = () => {
         {currentUser.username}
       </p> */}
       <p>
-        {/* Selected House: */}
         <img className="reserve-img" src={selectedHouse.imageUrl} alt={selectedHouse.title} />
       </p>
       <p className="house-title">
@@ -41,6 +58,18 @@ const ReservePage = () => {
       <p className="house-id">
         Selected House ID:
         <span>{selectedHouse ? selectedHouse.id : 'None'}</span>
+      </p>
+      <label htmlFor="day-rate">
+        Rate per day:
+        <input type="number" id="day-rate" value={ratePerDay} onChange={handleRatePerDayChange} />
+      </label>
+      <label htmlFor="days-stay">
+        No. of day plan to stay:
+        <input type="number" id="days-stay" value={daysStay} onChange={handleDaysStayChange} />
+      </label>
+      <p>
+        Amount due: $
+        {amountDue}
       </p>
       <label htmlFor="date">
         Select a date:

@@ -5,6 +5,7 @@ import MainPage from './components/pages/Mainpage';
 import HouseDetails from './components/pages/HouseDetails';
 import ReservePage from './components/pages/ReservePage';
 import './style.css';
+import './mainPage.css';
 
 function App() {
   return (

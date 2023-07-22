@@ -27,9 +27,11 @@ body {
   list-style: none;
   padding: 1rem;
   align-items: center;
+  text-align: center;
   position: fixed;
   margin-top: 2.8rem;
   border-right: 0.01px solid whitesmoke;
+  z-index: 2;
 }
 
 .navbar li {
@@ -48,8 +50,10 @@ body {
 }
 
 .navbar li a:hover {
-  background-color: rgb(174, 235, 83);
+  background-color: rgb(25, 212, 25);
   padding: 0.3rem;
+  transition: 3ms ease-in-out;
+  border-radius: 1rem;
 }
 
 .navbar li img {
@@ -130,7 +134,8 @@ body {
   width: 100%;
   flex-direction: column;
   row-gap: 0.3rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  margin-left: 6rem;
 }
 
 .house-info .house-title {
