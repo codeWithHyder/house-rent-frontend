@@ -11,87 +11,8 @@ body {
 }
 
 .main-container {
-  /* background-color: rgb(204, 90, 90); */
   height: 100%;
   width: 100%;
-
-  /* position: absolute; */
-}
-
-.navbar {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 20%;
-  background-color: rgb(255, 255, 255);
-  list-style: none;
-  padding: 1rem;
-  align-items: center;
-  text-align: center;
-  position: fixed;
-  margin-top: 2.8rem;
-  border-right: 0.01px solid whitesmoke;
-  z-index: 2;
-}
-
-.navbar li {
-  margin-left: 1rem;
-  margin-bottom: 3rem;
-  width: 10rem;
-  height: 2rem;
-  text-decoration: none;
-}
-
-.navbar li a {
-  text-decoration: none;
-  font-family: sans-serif;
-  color: rgb(3, 3, 3);
-  font-weight: bold;
-}
-
-.navbar li a:hover {
-  background-color: rgb(25, 212, 25);
-  padding: 0.3rem;
-  transition: 3ms ease-in-out;
-  border-radius: 1rem;
-}
-
-.navbar li img {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 3rem;
-}
-
-.main-page {
-  width: 80%;
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  margin-left: 20%;
-  position: absolute;
-  column-gap: 1rem;
-  row-gap: 3rem;
-  padding-left: 1rem;
-  padding-top: 2rem;
-  margin-top: 2rem;
-}
-
-.main-page li {
-  display: block;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 100%;
-  list-style: none;
-  padding: 0.4rem;
-  margin-bottom: 5rem;
-  background-color: rgb(230, 220, 220);
-}
-
-.main-page li .img-house1 {
-  width: 100%;
-  height: 100%;
-  border-radius: 10rem;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
 .rent-house {

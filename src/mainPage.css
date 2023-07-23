@@ -1,14 +1,6 @@
 /* mainPage.css */
-
-.main-page-container {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  border: 1px solid green;
-}
-
 .main-page {
+  width: 80%;
   display: flex;
   list-style: none;
   padding: 0;
@@ -24,6 +16,46 @@ li {
   flex-shrink: 0;
   margin-right: 20px;
 }
+
+.main-page li {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+  list-style: none;
+  padding: 0.4rem;
+  margin-bottom: 5rem;
+  background-color: rgb(230, 220, 220);
+}
+
+.main-page li .img-house1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* slidebar css  */
+
+.main-page-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border: 1px solid green;
+}
+
+/* .main-page {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 5rem;
+  transition: all 0.3s ease;
+  margin-left: 20%;
+  column-gap: 5rem;
+  z-index: -1;
+} */
 
 .arrow {
   cursor: pointer;
