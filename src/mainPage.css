@@ -1,0 +1,135 @@
+/* mainPage.css */
+.main-page {
+  width: 80%;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 7rem;
+  transition: all 0.3s ease;
+  margin-left: 20%;
+  column-gap: 5rem;
+  z-index: -1;
+}
+
+li {
+  min-width: 100%;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.main-page li {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+  list-style: none;
+  padding: 0.4rem;
+  margin-bottom: 5rem;
+  background-color: rgb(230, 220, 220);
+}
+
+.main-page li .img-house1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* slidebar css  */
+
+.main-page-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border: 1px solid green;
+}
+
+/* .main-page {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 5rem;
+  transition: all 0.3s ease;
+  margin-left: 20%;
+  column-gap: 5rem;
+  z-index: -1;
+} */
+
+.arrow {
+  cursor: pointer;
+  font-size: 30px;
+  padding: 10px;
+  background-color: rgb(120, 240, 104);
+  margin-left: 20%;
+  margin-top: 9rem;
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 1rem 0 1rem;
+}
+
+.left-arrow {
+  left: 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  width: 3rem;
+}
+
+.right-arrow {
+  right: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  width: 3rem;
+}
+
+.slider-container {
+  display: flex;
+  position: relative;
+  width: 20%;
+  height: 20%;
+  margin-left: 20%;
+  border-radius: 100%;
+  padding-left: 2rem;
+  z-index: 1;
+}
+
+.slide-animation {
+  animation: slide 2s;
+}
+
+.btn-details {
+  background-color: rgb(85, 233, 85);
+  width: 5rem;
+  height: 2.5rem;
+  outline: whitesmoke;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-left: 0;
+  border-radius: 1rem;
+  color: whitesmoke;
+  position: relative;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-details:hover {
+  background-color: rgb(25, 212, 25);
+  transition: 0.3s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% * var(--index)));
+  }
+}
