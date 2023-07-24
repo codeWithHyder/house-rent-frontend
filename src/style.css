@@ -80,50 +80,10 @@ body {
   cursor: pointer;
   font-size: medium;
   font-weight: 600;
-  background-color: rgb(120, 240, 104);
+  background-color: #a3f834;
   margin-left: auto;
   margin-right: auto;
   outline: none;
   border: 0;
   border-radius: 1rem;
-
-  /* row-gap: 0.2rem; */
 }
-
-/* .reserve-page {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5rem;
-  position: absolute;
-  margin-left: 22%;
-  row-gap: 1.5rem;
-  /* margin-left: auto; */
-
-/* margin-right: auto;
-}
-
-.reserve-page .reserve-img {
-  width: 45rem;
-  height: 40rem;
-  border-radius: 2rem;
-}
-
-.reserve-page .house-id span,
-.reserve-page .house-title span {
-  font-family: sans-serif;
-  font-weight: 700;
-  color: green;
-}
-
-.reserve-hs {
-  text-align: center;
-  font-family: sans-serif;
-}
-
-.btn-reserve {
-  height: 3rem;
-  width: 20rem;
-  cursor: pointer;
-  font-size: medium;
-  font-weight: 600;
-} */

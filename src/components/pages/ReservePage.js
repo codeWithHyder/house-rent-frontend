@@ -29,8 +29,9 @@ const ReservePage = () => {
 
   return (
     <div className="reserve-page">
-      <h2 className="reserve-hs">Reserve a House of Your Choice</h2>
+      {/* <h2 className="reserve-hs"> */}
       <div className="house-reserve-details">
+        <p className="headline">On Home Stay ,We have range of huses from 1 BHK to 5 BHK equipped with every facility</p>
         <label htmlFor="select-house">
           Select a House:
           <select className="select-house-option" id="select-house" value={selectedHouse} onChange={handleHouseChange}>

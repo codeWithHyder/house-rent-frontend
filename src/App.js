@@ -15,6 +15,7 @@ function App() {
       <div className="main-container">
         <Navigation />
         <h1 className="rent-house">Home Stay</h1>
+
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/house/:id" element={<HouseDetails />} />

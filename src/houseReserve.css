@@ -1,5 +1,4 @@
 .reserve-page {
-  width: 50rem;
   display: flex;
   flex-direction: column;
   margin-top: 5rem;
@@ -11,8 +10,6 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: 4rem;
-
-  /* background-color: rgb(96, 182, 96); */
   z-index: 2;
 }
 
@@ -43,6 +40,8 @@
   cursor: pointer;
   font-size: medium;
   font-weight: 600;
+  border: 1px solid grey;
+  background-color: gainsboro;
 }
 
 .house-reserve-details {
@@ -55,8 +54,8 @@
   border-radius: 1rem;
   margin-top: 0;
   z-index: -2;
-  background-color: rgb(49, 163, 49);
-  opacity: 0.75;
+  background-color: #a3f834;
+  opacity: 1;
 }
 
 .house-reserve-details input[type=option] {
@@ -85,4 +84,15 @@
   height: 3rem;
   border-radius: 1rem;
   padding: 0.5rem;
+}
+
+.btn-back {
+  background-color: cornsilk;
+  border: 1px solid gray;
+}
+
+.headline {
+  font-family: sans-serif;
+  font-weight: 700;
+  color: whitesmoke;
 }
