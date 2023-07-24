@@ -53,7 +53,45 @@ const Register = () => {
   }, [isSignedUp, navigate]);
 
   return (
-    
+    <section>
+      <h3>Welcome</h3>
+      <form onSubmit={handleSubmit}>
+        <h4>Register</h4>
+        <div>
+          <input
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            placeholder="Enter email"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+            placeholder="Enter full name"
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            placeholder="password"
+          />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <p>
+        Already have an account?
+        {' '}
+        <Link to="/sign_in" style={{ textDecoration: 'none' }}>
+          sign_in
+        </Link>
+      </p>
+      {renderMessage()}
+    </section>
 
   );
 };

@@ -25,7 +25,44 @@ const Login = () => {
   };
 
   return (
+    <section>
+      <h2>Welcome back</h2>
 
+      <form onSubmit={handleSubmit}>
+        <h4>Member Login</h4>
+        <div>
+          <input
+            type="email"
+            placeholder="Useremail"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </div>
+
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(event) => setPassword(event.target.value)}
+            value={password}
+          />
+        </div>
+
+        <Link to="/">
+          <button type="submit">Login</button>
+          <button type="button" aria-label="Go back">
+            Back
+          </button>
+        </Link>
+      </form>
+      <p>
+        New here?
+        {' '}
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          Register
+        </Link>
+      </p>
+    </section>
 
   );
 };
