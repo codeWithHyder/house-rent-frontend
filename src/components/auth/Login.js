@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FaUser } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../Redux/feature/UserSlice';
 
 const Login = () => {
@@ -26,7 +25,8 @@ const Login = () => {
   };
 
   return (
-    <div> Login Page </div>
+
+
   );
 };
 

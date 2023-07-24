@@ -14,16 +14,16 @@ function App() {
   return (
 
     <div className="main-container">
-      {/* <Navigation /> */}
       <h1 className="rent-house">Home Stay</h1>
       <Router>
         <Routes>
           <Route path="/sign_in" element={<Login />} />
           <Route path="/sign_up" element={<Register />} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="/house/:id" element={<HouseDetails />} />
-          <Route path="/reserve/:id" element={<ReservePage />} />
-          {/* Add more routes here */}
+          <Route element={<Navigation />}>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/house/:id" element={<HouseDetails />} />
+            <Route path="/reserve/:id" element={<ReservePage />} />
+          </Route>
         </Routes>
       </Router>
     </div>

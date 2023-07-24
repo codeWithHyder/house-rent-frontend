@@ -7,7 +7,7 @@ import { signUp } from '../../Redux/feature/regestrationSlice';
 const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [full_name, setFullName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { status, error } = useSelector((state) => state.register) || {};
@@ -16,8 +16,8 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signUp({
+      name,
       email,
-      full_name,
       password,
     }));
     setIsSignedUp(true);
@@ -46,14 +46,15 @@ const Register = () => {
   useEffect(() => {
     if (isSignedUp) {
       setTimeout(() => {
-        navigate('/login');
+        navigate('/sign_in');
         setIsSignedUp(false);
       }, 100);
     }
   }, [isSignedUp, navigate]);
 
   return (
-    <div> Registration Page </div>
+    
+
   );
 };
 
