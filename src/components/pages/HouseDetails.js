@@ -11,7 +11,7 @@ const HouseDetails = () => {
   const detailData = useSelector((state) => state.house.houseData);
   const { id } = useParams();
   const house = detailData.find((house) => house.id === parseInt(id, 10));
-  console.log(house);
+  // console.log(house);
   if (!house) {
     return <div>House not found</div>;
   }
@@ -27,12 +27,16 @@ const HouseDetails = () => {
       <img className="dis-img" src={house.imageUrl} alt={house.title} />
       </div>
       <div className="house-info">
-        <h3 className="house-title">{house.title}</h3>
-        <p>{house.description}</p>
+        <h3 className="house-title">House Title: {house.title}</h3>
+        <p>House Decription: {house.description}</p>
+        <p>Price: ${house.price}</p>
+        <p>Type: {house.type}</p>
+        <p>BHK: {house.BHK}</p>
+        <p>AC: {house.AC}</p>
         <button className="btn-book" type="button" onClick={handleReserve}>
-          Reserve House
+          Reserve
         </button>
-         <button className="btn-book" type="button" onClick={() => navigate('/')}> Back to Main </button>
+         <button className="btn-book" type="button" onClick={() => navigate('/')}> &#8592;  Back  </button>
       </div>
     </div>
   );
