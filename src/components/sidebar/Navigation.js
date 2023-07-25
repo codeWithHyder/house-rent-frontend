@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
 
 const Navigation = () => (
   <nav>
@@ -7,7 +8,7 @@ const Navigation = () => (
       <li><a href="#m">House</a></li>
       <li><a href="#d">Reserveform</a></li>
       <li><a href="#c">MyReservations</a></li>
-      <li><a href="#c">AddHouse</a></li>
+      <li><a href="/addhouse">AddHouse</a></li>
       <li><a href="#c">DeleteHouse</a></li>
     </ul>
   </nav>
