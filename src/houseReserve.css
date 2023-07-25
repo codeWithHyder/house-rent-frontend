@@ -36,7 +36,7 @@
 
 .btn-reserve {
   height: 3rem;
-  width: 43rem;
+  width: 41rem;
   cursor: pointer;
   font-size: medium;
   font-weight: 600;
@@ -46,7 +46,7 @@
 
 .house-reserve-details {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 75%;
   column-gap: 2rem;
   row-gap: 1rem;
   align-items: normal;
@@ -59,13 +59,13 @@
 }
 
 .house-reserve-details input[type=option] {
-  width: 20rem;
+  width: 35rem;
   height: 2.5rem;
   padding: 0.5rem;
 }
 
 .select-house-option {
-  width: 100%;
+  width: 41rem;
   border-radius: 1rem;
   height: 3rem;
   padding: 0.3rem;
@@ -73,7 +73,7 @@
 
 .date-city {
   display: flex;
-  column-gap: 7rem;
+  column-gap: 5rem;
   row-gap: 1rem;
   margin-bottom: 2rem;
 }

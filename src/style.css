@@ -46,21 +46,19 @@ body {
 
 .image-section .dis-img {
   width: 40rem;
-  height: 40rem;
+  height: 35rem;
   border-radius: 1rem;
 }
 
 .house-info {
   display: flex;
-  width: 22rem;
+  width: 20rem;
   flex-direction: column;
-  row-gap: 2rem;
-  margin-top: 3rem;
+  row-gap: 1rem;
+  margin-top: 2.5rem;
   margin-left: 2rem;
-
-  /* background-color: rgb(247, 244, 244); */
   padding-left: 1rem;
-  padding-top: 1rem;
+  padding-top: 0.4rem;
   border-radius: 1rem;
 }
 
@@ -68,8 +66,14 @@ body {
   font-family: sans-serif;
   font-weight: 900;
   text-align: center;
+}
 
-  /* background-color: transparent; */
+.house-info .house-dtls {
+  background-color: rgb(240, 231, 231);
+  height: 3rem;
+  width: 20rem;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0 0.2rem 1rem;
 }
 
 .house-info .btn-book,
