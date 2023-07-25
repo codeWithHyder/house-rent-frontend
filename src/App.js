@@ -9,6 +9,7 @@ import Register from './components/auth/Register';
 import './style.css';
 import './navbar.css';
 import './mainPage.css';
+import './houseReserve.css';
 
 function App() {
   return (
@@ -25,9 +26,8 @@ function App() {
             <Route path="/reserve/:id" element={<ReservePage />} />
           </Route>
         </Routes>
-      </Router>
-    </div>
-
+      </div>
+    </Router>
   );
 }
 

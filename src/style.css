@@ -31,7 +31,7 @@ body {
   width: 80%;
   display: grid;
   grid-template-columns: 50% 30%;
-  column-gap: 10rem;
+  column-gap: 5rem;
   margin-left: 21%;
   position: absolute;
   margin-top: 1rem;
@@ -39,24 +39,27 @@ body {
 
 .image-section {
   display: flex;
-  width: 70%;
+  width: 40%;
   height: 50%;
   margin-top: 3rem;
 }
 
 .image-section .dis-img {
-  width: 42rem;
-  height: 40rem;
+  width: 40rem;
+  height: 35rem;
   border-radius: 1rem;
 }
 
 .house-info {
   display: flex;
-  width: 100%;
+  width: 20rem;
   flex-direction: column;
-  row-gap: 0.3rem;
-  margin-top: 2rem;
-  margin-left: 1.8rem;
+  row-gap: 1rem;
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  padding-top: 0.4rem;
+  border-radius: 1rem;
 }
 
 .house-info .house-title {
@@ -65,45 +68,26 @@ body {
   text-align: center;
 }
 
-.house-info .btn-book {
+.house-info .house-dtls {
+  background-color: rgb(240, 231, 231);
   height: 3rem;
   width: 20rem;
-  cursor: pointer;
-  font-size: medium;
-  font-weight: 600;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0 0.2rem 1rem;
 }
 
-.reserve-page {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5rem;
-  position: absolute;
-  margin-left: 22%;
-  row-gap: 1.5rem;
-}
-
-.reserve-page .reserve-img {
-  width: 45rem;
-  height: 40rem;
-  border-radius: 2rem;
-}
-
-.reserve-page .house-id span,
-.reserve-page .house-title span {
-  font-family: sans-serif;
-  font-weight: 700;
-  color: green;
-}
-
-.reserve-hs {
-  text-align: center;
-  font-family: sans-serif;
-}
-
+.house-info .btn-book,
+.btn-back,
 .btn-reserve {
   height: 3rem;
-  width: 20rem;
+  width: 10rem;
   cursor: pointer;
   font-size: medium;
   font-weight: 600;
+  background-color: #a3f834;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
+  border: 0;
+  border-radius: 1rem;
 }
