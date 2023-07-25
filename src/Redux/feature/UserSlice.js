@@ -12,26 +12,35 @@ export const login = createAsyncThunk('auth/login', async ({ name, password }) =
   return { error: response.data };
 });
 
-export const logoutUser = createAsyncThunk(
-  'auth/logout',
-  async (_, thunkAPI) => {
-    try {
-      const response = await axios.delete('http://localhost:3000/sign_out', {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      });
-
-      if (response.status === 200) {
-        localStorage.removeItem('token');
-        return { success: true };
-      }
-      return thunkAPI.rejectWithValue('Logout failed');
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
+export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // If the token is not present, the user is already considered logged out.
+      // You may choose to return { success: true } or thunkAPI.fulfillWithValue({ success: true })
+      return { success: true };
     }
-  },
-);
+
+    const response = await axios.delete('http://localhost:3000/sign_out', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (response.status === 200) {
+      localStorage.removeItem('token');
+      return { success: true };
+    }
+
+    // If the status code is not 200, it means the logout request was not successful.
+    // You may choose to return thunkAPI.rejectWithValue with an appropriate error message.
+    return thunkAPI.rejectWithValue('Logout failed');
+  } catch (error) {
+    // If an error occurs, you can return thunkAPI.rejectWithValue with the error message
+    // returned from the server, or a generic error message.
+    return thunkAPI.rejectWithValue('Logout failed');
+  }
+});
 
 const authSlice = createSlice({
   name: 'auth',

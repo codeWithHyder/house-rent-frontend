@@ -91,14 +91,14 @@ const Register = () => {
           Register
           {' '}
         </button>
+        <p>
+          Already have an account?
+          {' '}
+          <Link to="/sign_in" style={{ textDecoration: 'none', color: ' white' }}>
+            SignIn
+          </Link>
+        </p>
       </form>
-      <p>
-        Already have an account?
-        {' '}
-        <Link to="/sign_in" style={{ textDecoration: 'none', color: ' white' }}>
-          SignIn
-        </Link>
-      </p>
       {renderMessage()}
     </section>
 

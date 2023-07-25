@@ -63,14 +63,14 @@ const Login = () => {
             Login
           </button>
         )}
+        <p>
+          Create New Account,
+          {' '}
+          <Link to="/sign_up" style={{ textDecoration: 'none', color: ' white' }}>
+            SignUp
+          </Link>
+        </p>
       </form>
-      <p>
-        Create New Account,
-        {' '}
-        <Link to="/sign_up" style={{ textDecoration: 'none', color: ' white' }}>
-          SignUp
-        </Link>
-      </p>
     </section>
 
   );
