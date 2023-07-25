@@ -29,16 +29,14 @@ const ReservePage = () => {
 
   return (
     <div className="reserve-page">
-      {/* <h2 className="reserve-hs"> */}
       <div className="house-reserve-details">
-        <p className="headline">On Home Stay ,We have range of huses from 1 BHK to 5 BHK equipped with every facility</p>
+        <p className="headline">On Home Stay ,We have range of huses/apartments from 1 BHK to 5 BHK equipped with every facility</p>
         <label htmlFor="select-house">
-          Select a House:
           <select className="select-house-option" id="select-house" value={selectedHouse} onChange={handleHouseChange}>
             <option value="">Select a house</option>
             {houses.map((house) => (
               <option key={house.id} value={house.title}>
-                {house.title}
+                {house.description}
               </option>
             ))}
           </select>
@@ -51,13 +49,11 @@ const ReservePage = () => {
           <label htmlFor="city">
 
             <select className="city" id="city" value={selectedCity} onChange={handleCityChange}>
-              <option value="">Select a city</option>
-              <option value="City A">City A</option>
-              <option value="City B">City B</option>
-              <option value="City C">City C</option>
-              <option value="City D">City D</option>
-              <option value="City E">City E</option>
-              <option value="City F">City F</option>
+              {houses.map((house) => (
+                <option key={house.id} value={house.title}>
+                  {house.location}
+                </option>
+              ))}
               {/* Add more options for cities */}
             </select>
           </label>
