@@ -7,23 +7,23 @@ import ReservePage from './components/pages/ReservePage';
 import './style.css';
 import './navbar.css';
 import './mainPage.css';
+import './houseReserve.css';
 
 function App() {
   return (
+    <Router>
+      <div className="main-container">
+        <Navigation />
+        <h1 className="rent-house">Home Stay</h1>
 
-    <div className="main-container">
-      <Navigation />
-      <h1 className="rent-house">Home Stay</h1>
-      <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/house/:id" element={<HouseDetails />} />
           <Route path="/reserve/:id" element={<ReservePage />} />
           {/* Add more routes here */}
         </Routes>
-      </Router>
-    </div>
-
+      </div>
+    </Router>
   );
 }
 

@@ -10,7 +10,7 @@
   text-align: center;
   position: fixed;
   margin-top: 2.8rem;
-  border-right: 0.01px solid whitesmoke;
+  border-right: 1px solid rgb(226, 221, 221);
   z-index: 2;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .navbar li a:hover {
-  background-color: rgb(25, 212, 25);
+  background-color: #a3f834;
   padding: 0.3rem;
   transition: 3ms ease-in-out;
   border-radius: 1rem;
