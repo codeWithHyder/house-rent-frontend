@@ -1,120 +1,79 @@
-// import { createSlice } from '@reduxjs/toolkit';
+/* eslint-disable */
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// const houseData = [
-//   {
-//     id: 1,
-//     title: 'Beautiful House 1',
-//     description: 'This is a beautiful house with a large garden.',
-//     price: 250000,
-//     type: 'Single Storey',
-//     BHK: 3,
-//     AC: 'yes',
-//     imageUrl: 'https://www.rocketmortgage.com/resources-cmsassets/RocketMortgage.com/Article_Images/Large_Images/TypesOfHomes/types-of-homes-hero.jpg',
-//   },
-//   {
-//     id: 2,
-//     title: 'Cozy House 2',
-//     description: 'A cozy house with a fireplace and stunning view.',
-//     price: 180000,
-//     type: 'Double Storey',
-//     BHK: 2,
-//     AC: 'No',
-//     imageUrl: 'https://housing.com/news/wp-content/uploads/2022/11/shutterstock_1715891752-1200x700-compressed.jpg',
-//   },
-//   {
-//     id: 3,
-//     title: 'Cozy House 3',
-//     description: 'A cozy house with a fireplace and stunning view.',
-//     price: 180000,
-//     type: 'Double Storey',
-//     BHK: 3,
-//     AC: 'yes',
-//     imageUrl: 'https://assets-news.housing.com/news/wp-content/uploads/2022/04/07013406/ELEVATED-HOUSE-DESIGN-FEATURE-compressed.jpg',
-//   },
-//   {
-//     id: 4,
-//     title: 'Cozy House 4',
-//     description: 'A cozy house with a fireplace and stunning view.',
-//     price: 180000,
-//     type: 'single storey',
-//     BHK: 3,
-//     AC: 'No',
-//     imageUrl: 'https://thumbs.dreamstime.com/z/beautiful-exterior-home-pictures-new-home-design-images-modern-best-house-design-images-best-house-images-images-latest-172194515.jpg',
-//   },
-//   {
-//     id: 5,
-//     title: 'Cozy House 5',
-//     description: 'A cozy house with a fireplace and stunning view.',
-//     price: 180000,
-//     type: 'Duble Storey',
-//     BHK: 2,
-//     AC: 'yes',
-//     imageUrl: 'https://images.coolhouseplans.com/plans/80523/80523-b440.jpg',
-//   },
-//   {
-//     id: 6,
-//     title: 'Cozy House 6',
-//     description: 'A cozy house with a fireplace and stunning view.',
-//     price: 180000,
-//     type: 'single Storey',
-//     BHK: 3,
-//     Ac: 'No',
-//     imageUrl: 'https://www.nobroker.in/blog/wp-content/uploads/2022/07/Small-House-Designs.jpg',
-//   },
-//   {
-//     id: 7,
-//     title: 'Cozy House 7',
-//     description: 'A cozy house with a fireplace and stunning view.',
-//     price: 180000,
-//     type: 'Double storey',
-//     BHK: 3,
-//     AC: 'yes',
-//     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLZoRD0K8p5aZ0PH_03Qz0nxACra-IW2syxg&usqp=CAU',
-//   },
-//   {
-//     id: 8,
-//     title: 'Cozy House 8',
-//     description: 'A cozy house with a fireplace and stunning view.',
-//     price: 180000,
-//     type: 'Single Storey',
-//     BHK: 3,
-//     AC: 'yes',
-//     imageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bHV4dXJ5JTIwaG91c2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-//   },
-//   // Add more house objects here...
-// ];
+const getHousesurl = 'http://127.0.0.1:3000/api/v1/houses';
+const addHouseUrl = 'http://localhost:3000/api/v1/houses';
 
-// const initialState = {
-//   houseData,
-//   isLoading: true,
-// };
+export const getHouses = createAsyncThunk('houses/getHouses', () => fetch(getHousesurl)
+  .then((res) => res.json())
+  .catch((err) => console.log(err))
+);
 
-// const houseSlice = createSlice({
-//   name: 'house',
-//   initialState,
-// });
-
-// // console.log(cartSlice);
-
-// export default houseSlice.reducer;
-
-// ---------------------------------------------------
-// api/feature/houseSlice.js
-import { createSlice } from '@reduxjs/toolkit';
+export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseData) => {
+  try {
+    const response = await fetch(addHouseUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newHouseData),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+});
 
 const initialState = {
-  houseData: [], // This is where we will store the API data
+  houseData: [],
+  isLoading: false,
+  error: null,
 };
 
 const houseSlice = createSlice({
   name: 'house',
   initialState,
   reducers: {
-    setHouses: (state, action) => {
-      state.houseData = action.payload;
+    addHouse: (state, { payload }) => {
+      state.houseData.push({
+        name: payload.name,
+        location: payload.location,
+        rental_fee: payload.rental_fee,
+        date_built: payload.date_built,
+        category: payload.category,
+        image_url: payload.image_url,
+        description: payload.description,
+      });
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getHouses.pending, (state) => {
+      state.isLoading = true;
+    }),
+    builder.addCase(getHouses.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.houseData = action.payload;
+    }),
+    builder.addCase(getHouses.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
+    builder.addCase(addHouseApi.pending, (state) => ({
+      ...state,
+      error: false,
+    }));
+    builder.addCase(addHouseApi.fulfilled, (state) => ({
+      ...state,
+      error: false,
+    }));
+    builder.addCase(addHouseApi.rejected , (state) => ({
+      ...state,
+      error: true,
+    }));
   },
 });
 
-export const { setHouses } = houseSlice.actions;
+export const { addHouse, setHouses } = houseSlice.actions;
 export default houseSlice.reducer;

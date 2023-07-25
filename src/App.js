@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Navigation from './components/sidebar/Navigation';
 import MainPage from './components/pages/Mainpage';
 import HouseDetails from './components/pages/HouseDetails';
 import ReservePage from './components/pages/ReservePage';
 import AddHouse from './components/pages/AddHouse';
+import Navigation from './components/sidebar/Navigation';
 import './style.css';
 import './navbar.css';
 import './mainPage.css';

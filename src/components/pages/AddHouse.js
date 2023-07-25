@@ -2,65 +2,119 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";
-import { addHouse } from '../../Redux/feature/addHouseSlice';
+import { addHouseApi, addHouse } from '../../Redux/feature/houseSlice';
 import '../styles/addhouse.css';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const AddHouse = () => {
   const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    name: '',
+    location: '',
+    rental_fee: '',
+    date_built: '',
+    category: '',
+    image_url: '',
+    description: '',
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(addHouseApi(formData))
+    .then (() => {
+      dispatch(addHouse(formData))
+    })
+    setFormData({
+      name: '',
+      location: '',
+      rental_fee: '',
+      date_built: '',
+      category: '',
+      image_url: '',
+      description: '',
+    });
+  };
 
-    // Dispatch the addHouse action with the form data
-    dispatch(
-      addHouse({
-        HouseName: formData.HouseName,
-        Location: formData.Location,
-        Rental_Fee: formData.Rental_Fee,
-        Date_Built: formData.Date_Built,
-        Category: formData.Category,
-        imageLink: formData.imageLink,
-        description: formData.description,
-      })
-    );
-
-    // After the dispatch is complete, you can redirect or show a success message.
-    // Example: history.push('/houses') for redirecting to the houses page.
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
     <div className="add-house-form-container">
     <h1>Add House</h1>
-    <form className="add-house-form">
-      <label htmlFor="HouseName">
-        
-        <input type="text" placeholder="House Name" id="house-name-input" />
+    <form className="add-house-form" onSubmit={handleSubmit}>
+      <label htmlFor="HouseName">       
+        <input
+          name="name" 
+          type="text" 
+          placeholder="House Name" 
+          id="house-name-input"
+          value={formData.name}
+          onChange={handleChange} 
+        />
       </label>
-      <label htmlFor="Location">
-        
-        <input type="text" placeholder="Location" id="house-location" />
+      <label htmlFor="Location">        
+        <input
+          name="location"  
+          type="text" 
+          placeholder="Location" 
+          id="house-location"
+          value={formData.location}
+          onChange={handleChange}
+        />
       </label>
-      <label htmlFor="Rental_Fee">
-        
-        <input type="number" placeholder="Rental Fee" id="price-input" />
+      <label htmlFor="Rental_Fee">        
+        <input
+          name="rental_fee" 
+          type="number" 
+          placeholder="Rental Fee" 
+          id="price-input"
+          value={formData.rental_fee}
+          onChange={handleChange}
+        />
       </label>
       <label htmlFor="Date_Built">
         Date Built:
-        <input type="date" placeholder="Date Built" id="date-input" />
+        <input
+          name="date_built" 
+          type="date" 
+          placeholder="Date Built" 
+          id="date-input"
+          value={formData.date_built}
+          onChange={handleChange}
+        />
       </label>
-      <label htmlFor="Category">
-        
-        <input type="text" placeholder="Category" id="category-input" />
+      <label htmlFor="Category">        
+        <input
+          name="category"
+          type="text" 
+          placeholder="Category" 
+          id="category-input"
+          value={formData.category}
+          onChange={handleChange}
+        />
       </label>
-      <label htmlFor="imageLink">
-        
-        <input type="text" placeholder="Image Url" id="house-img-url" />
+      <label htmlFor="imageLink">        
+        <input
+          name="image_url"
+          type="text" 
+          placeholder="Image Url" 
+          id="house-img-url" 
+          value={formData.image_url}
+          onChange={handleChange}
+        />
       </label>
-      <label htmlFor="description">
-        
-        <textarea type="text" placeholder="Description" id="description-area" />
+      <label htmlFor="description">       
+        <textarea
+          name="description"
+          type="text" 
+          placeholder="Description" 
+          id="description-area"
+          value={formData.description}
+          onChange={handleChange}
+        />
       </label>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
+      <button type="submit">Submit</button>
     </form>
   </div>
   )
