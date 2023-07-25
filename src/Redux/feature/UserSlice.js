@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const login = createAsyncThunk('auth/login', async ({ email, password }) => {
-  const response = await axios.post('http://localhost:3000/sign_in', { user: { email, password } });
+export const login = createAsyncThunk('auth/login', async ({ name, password }) => {
+  const response = await axios.post('http://localhost:3000/sign_in', { user: { name, password } });
   if (response.status === 200) {
     const authorizationHeader = response.headers.authorization;
     const token = authorizationHeader ? authorizationHeader.split(' ')[1] : null;

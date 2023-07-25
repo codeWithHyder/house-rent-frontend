@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.auth.loggedIn);
   const token = localStorage.getItem('token');
-  const [email, setEmail] = useState('');
+  const [name, setname] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -26,7 +26,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
-    dispatch(login({ email, password }));
+    dispatch(login({ name, password }));
   };
 
   return (
@@ -37,10 +37,10 @@ const Login = () => {
         <div className="input-container">
           <FaUser className="input-icon" />
           <input
-            type="email"
-            placeholder="Useremail"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            type="text"
+            placeholder="UserName"
+            value={name}
+            onChange={(event) => setname(event.target.value)}
           />
         </div>
 
