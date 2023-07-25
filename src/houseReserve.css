@@ -46,7 +46,7 @@
 
 .house-reserve-details {
   display: grid;
-  grid-template-columns: 80%;
+  grid-template-columns: 75%;
   column-gap: 2rem;
   row-gap: 1rem;
   align-items: normal;

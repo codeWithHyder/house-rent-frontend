@@ -49,6 +49,7 @@ const ReservePage = () => {
           <label htmlFor="city">
 
             <select className="city" id="city" value={selectedCity} onChange={handleCityChange}>
+              <option value="">Select a city</option>
               {houses.map((house) => (
                 <option key={house.id} value={house.title}>
                   {house.location}
