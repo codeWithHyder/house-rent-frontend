@@ -6,16 +6,15 @@ import HouseDetails from './components/pages/HouseDetails';
 import ReservePage from './components/pages/ReservePage';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-import './style.css';
-import './navbar.css';
-import './mainPage.css';
-import './houseReserve.css';
+import './styling/style.css';
+import './styling/navbar.css';
+import './styling/mainPage.css';
+import './styling/houseReserve.css';
 
 function App() {
   return (
 
     <div className="main-container">
-      <h1 className="rent-house">Home Stay</h1>
       <Router>
         <Routes>
           <Route path="/sign_in" element={<Login />} />
@@ -26,8 +25,8 @@ function App() {
             <Route path="/reserve/:id" element={<ReservePage />} />
           </Route>
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

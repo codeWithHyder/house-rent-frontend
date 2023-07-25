@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { FaUser, FaLock } from 'react-icons/fa';
+import { MdSupervisedUserCircle } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../Redux/feature/UserSlice';
+import '../../styling/Auth.css';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -10,6 +13,7 @@ const Login = () => {
   const token = localStorage.getItem('token');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (token && isLoggedIn) {
@@ -21,15 +25,17 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     dispatch(login({ email, password }));
   };
 
   return (
-    <section>
-      <h2>Welcome back</h2>
-      <form onSubmit={handleSubmit}>
-        <h4>Member Login</h4>
-        <div>
+    <section className="login-page">
+      <div className="avatar-container"><MdSupervisedUserCircle /></div>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h4 className="form-heading">Member Login</h4>
+        <div className="input-container">
+          <FaUser className="input-icon" />
           <input
             type="email"
             placeholder="Useremail"
@@ -38,7 +44,8 @@ const Login = () => {
           />
         </div>
 
-        <div>
+        <div className="input-container">
+          <FaLock className="input-icon" />
           <input
             type="password"
             placeholder="Password"
@@ -47,18 +54,21 @@ const Login = () => {
           />
         </div>
 
-        <Link to="/">
-          <button type="submit">Login</button>
-          <button type="button" aria-label="Go back">
-            Back
+        {loading ? (
+          <button type="submit" className="login-button" disabled>
+            Logging in...
           </button>
-        </Link>
+        ) : (
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        )}
       </form>
       <p>
-        New here?
+        Create New Account,
         {' '}
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          Register
+        <Link to="/sign_up" style={{ textDecoration: 'none', color: ' white' }}>
+          SignUp
         </Link>
       </p>
     </section>

@@ -2,14 +2,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const login = createAsyncThunk('auth/login', async ({ email, password }) => {
-  const response = await axios.post('http://localhost:3000//sign_in', { user: { email, password } });
-  if (response.status >= 200 && response.status < 300) {
+  const response = await axios.post('http://localhost:3000/sign_in', { user: { email, password } });
+  if (response.status === 200) {
     const authorizationHeader = response.headers.authorization;
     const token = authorizationHeader ? authorizationHeader.split(' ')[1] : null;
     localStorage.setItem('token', token);
     return token;
   }
-  throw new Error(response);
+  return { error: response.data };
 });
 
 export const logoutUser = createAsyncThunk(

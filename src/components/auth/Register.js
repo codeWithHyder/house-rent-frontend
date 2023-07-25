@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import {
+  FaEnvelope, FaUser, FaLock,
+} from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { signUp } from '../../Redux/feature/regestrationSlice';
 
@@ -53,41 +56,47 @@ const Register = () => {
   }, [isSignedUp, navigate]);
 
   return (
-    <section>
-      <h3>Welcome</h3>
-      <form onSubmit={handleSubmit}>
-        <h4>Register</h4>
-        <div>
-          <input
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            placeholder="Enter email"
-          />
-        </div>
-        <div>
+    <section className="login-page">
+      <h3 className="welcome-text">Welcome</h3>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h4 className="form-heading">Register</h4>
+        <div className="input-container">
+          <FaUser className="input-icon" />
           <input
             type="text"
             onChange={(e) => setName(e.target.value)}
             value={name}
-            placeholder="Enter full name"
+            placeholder=" Full Name"
           />
         </div>
-        <div>
+        <div className="input-container">
+          <FaEnvelope className="input-icon" />
+          <input
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            placeholder="example@gmail.com"
+          />
+        </div>
+        <div className="input-container">
+          <FaLock className="input-icon" />
           <input
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
-            placeholder="password"
+            placeholder="Password"
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className="login-button">
+          Register
+          {' '}
+        </button>
       </form>
       <p>
         Already have an account?
         {' '}
-        <Link to="/sign_in" style={{ textDecoration: 'none' }}>
-          sign_in
+        <Link to="/sign_in" style={{ textDecoration: 'none', color: ' white' }}>
+          SignIn
         </Link>
       </p>
       {renderMessage()}
