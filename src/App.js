@@ -6,14 +6,17 @@ import HouseDetails from './components/pages/HouseDetails';
 import ReservePage from './components/pages/ReservePage';
 import AddHouse from './components/pages/AddHouse';
 import './style.css';
+import './navbar.css';
+import './mainPage.css';
+import './houseReserve.css';
 
 function App() {
   return (
+    <Router>
+      <div className="main-container">
+        <Navigation />
+        <h1 className="rent-house">Home Stay</h1>
 
-    <div className="main-container">
-      {/* <Navigation /> */}
-      {/* <h1 className="rent-house">Home Stay</h1> */}
-      <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/house/:id" element={<HouseDetails />} />
@@ -21,9 +24,8 @@ function App() {
           <Route path="/addhouse" element={<AddHouse />} />
           {/* Add more routes here */}
         </Routes>
-      </Router>
-    </div>
-
+      </div>
+    </Router>
   );
 }
 

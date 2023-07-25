@@ -1,15 +1,15 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => (
   <nav>
     <ul className="navbar">
       <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmoDV73D3hV_4yUErBD746LWfh_cru5spf5g&usqp=CAU" alt="house" /></li>
-      <li><a href="#m">House</a></li>
-      <li><a href="#d">Reserveform</a></li>
-      <li><a href="#c">MyReservations</a></li>
-      <li><a href="/addhouse">AddHouse</a></li>
-      <li><a href="#c">DeleteHouse</a></li>
+      <li><NavLink to="#" activeClassName="active-link" exact>House</NavLink></li>
+      <li><NavLink to="/reserve/:id" activeClassName="active-link">ReserveHouse</NavLink></li>
+      <li><NavLink to="/myreservations" activeClassName="active-link">MyReservations</NavLink></li>
+      <li><NavLink to="/addhouse" activeClassName="active-link">AddHouse</NavLink></li>
+      <li><NavLink to="/deletehouse" activeClassName="active-link">DeleteHouse</NavLink></li>
     </ul>
   </nav>
 );
