@@ -43,3 +43,15 @@
   height: 4rem;
   border-radius: 3rem;
 }
+
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: darkred;
+}
