@@ -4,7 +4,7 @@ import { deleteHouse } from '../../Redux/feature/houseSlice';
 
 const DeleteHouse = () => {
   const houses = useSelector((store) => store.house.houseData);
-  const dispatch = useDispatch();
+  
 
   return (
     <div>
@@ -18,7 +18,7 @@ const DeleteHouse = () => {
             price:
             {' '}
             {house.rental_fee}
-            <button type="button" onClick={dispatch(deleteHouse(house.id))}>Delete</button>
+            <button type="button" >Delete</button>
           </li>
         ))}
       </ul>
