@@ -28,7 +28,7 @@ const Navigation = () => {
         <li><NavLink to="#" activeClassName="active-link" exact>House</NavLink></li>
         <li><NavLink to="/reserve/:id" activeClassName="active-link">ReserveHouse</NavLink></li>
         <li><NavLink to="/myreservations" activeClassName="active-link">MyReservations</NavLink></li>
-        <li><NavLink to="/addhouse" activeClassName="active-link">AddHouse</NavLink></li>
+        {/* <li><NavLink to="/addhouse" activeClassName="active-link">AddHouse</NavLink></li> */}
         <li><NavLink to="/deletehouse" activeClassName="active-link">DeleteHouse</NavLink></li>
         {token ? (
           <li>
