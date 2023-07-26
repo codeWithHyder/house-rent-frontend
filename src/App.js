@@ -5,12 +5,11 @@ import HouseDetails from './components/pages/HouseDetails';
 import ReservePage from './components/pages/ReservePage';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-import { addHouse } from './Redux/feature/houseSlice';
+import Navigation from './components/sidebar/Navigation';
 import './styling/style.css';
 import './styling/navbar.css';
 import './styling/mainPage.css';
 import './styling/houseReserve.css';
-import { addHouse } from './Redux/feature/houseSlice';
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/house/:id" element={<HouseDetails />} />
             <Route path="/reserve/:id" element={<ReservePage />} />
-            <Route path="/addhouse" element={<AddHouse />} />
           </Route>
         </Routes>
       </Router>
