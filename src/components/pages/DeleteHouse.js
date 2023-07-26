@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteHouse } from '../../Redux/feature/houseSlice';
+import { deleteHouse, getHouses } from '../../Redux/feature/houseSlice';
 
 const DeleteHouse = () => {
   const houses = useSelector((store) => store.house.houseData);
-  
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getHouses());
+  }, []);
+
+  const handleDeleteHouse = (id) => {
+    dispatch(deleteHouse(id));
+  };
 
   return (
     <div>
@@ -18,13 +25,12 @@ const DeleteHouse = () => {
             price:
             {' '}
             {house.rental_fee}
-            <button type="button" >Delete</button>
+            <button type="button" onClick={() => handleDeleteHouse(house.id)}>Delete</button>
           </li>
         ))}
       </ul>
     </div>
   );
-  
 };
 
 export default DeleteHouse;
