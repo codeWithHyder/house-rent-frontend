@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const getHousesurl = 'http://127.0.0.1:3000/api/v1/houses';
 const addHouseUrl = 'http://localhost:3000/api/v1/houses';
+const deleteHouseUrl = 'http://localhost:3000/api/v1/houses/:id';
 
 export const getHouses = createAsyncThunk('houses/getHouses', () => fetch(getHousesurl)
   .then((res) => res.json())
@@ -25,6 +26,18 @@ export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseDa
     throw error;
   }
 });
+
+export const deleteHouse = createAsyncThunk(
+  'house/deleteHouse',
+  async (id, { rejectWithValue }) => {
+    try {
+      await fetch(`${addHouseUrl}/${id}`, { method: 'DELETE' });
+      return id;
+    } catch (error) {
+      return rejectWithValue(error.message); 
+    }
+  }
+);
 
 const initialState = {
   houseData: [],
@@ -71,6 +84,23 @@ const houseSlice = createSlice({
     builder.addCase(addHouseApi.rejected , (state) => ({
       ...state,
       error: true,
+    }));
+    builder.addCase(deleteHouse.pending, (state) => ({
+      ...state,
+      success: false,
+    }));
+    builder.addCase(deleteHouse.fulfilled, (state, action) => {
+      const deletedHouseId = action.payload;
+      const filteredHouses = state.book.filter((item) => item.item_id !== deletedHouseId);
+      return {
+        ...state,
+        house: filteredHouses,
+        success: true,
+      };
+    });
+    builder.addCase(deleteHouse.rejected , (state, action) => ({
+      ...state,
+      success: false,
     }));
   },
 });
