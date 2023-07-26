@@ -13,7 +13,11 @@
   flex-direction: column;
   justify-content: center;
   width: 70%;
+<<<<<<< HEAD
   margin-left: 2rem;
+=======
+  margin: 0 auto;
+>>>>>>> 4000e4b09bedd9eaa4e7efd0613fbeadd13a95a0
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;

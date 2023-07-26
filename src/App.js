@@ -28,6 +28,7 @@ function App() {
           <Route path="/house/:id" element={<HouseDetails />} />
           <Route path="/reserve/:id" element={<ReservePage />} />
           <Route path="/addhouse" element={<AddHouse />} />
+
           {/* Add more routes here */}
         </Routes>
       </div>
