@@ -10,18 +10,18 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.auth.loggedIn);
-  const token = localStorage.getItem('token');
+  // const token = localStorage.getItem('token');
   const [name, setname] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (token && isLoggedIn) {
+    if (isLoggedIn) {
       setTimeout(() => {
         navigate('/');
       }, 100);
     }
-  }, [isLoggedIn, token, navigate]);
+  }, [isLoggedIn, navigate]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +31,9 @@ const Login = () => {
 
   return (
     <section className="login-page">
-      <div className="avatar-container"><MdSupervisedUserCircle /></div>
+      <div className="avatar-container">
+        <MdSupervisedUserCircle />
+      </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <h4 className="form-heading">Member Login</h4>
         <div className="input-container">
@@ -72,7 +74,6 @@ const Login = () => {
         </p>
       </form>
     </section>
-
   );
 };
 
