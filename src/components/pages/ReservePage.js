@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { createReservation } from '../../Redux/feature/reservationsSlice';
+
 
 const ReservePage = () => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -23,9 +25,32 @@ const ReservePage = () => {
   };
 
   const handleReserve = () => {
-    // Implement your reservation logic here
-    // console.log('Reserve house:', selectedHouse, 'on', selectedDate, 'in', selectedCity);
+    // Check if all the necessary fields are filled
+    if (!selectedHouse || !selectedDate || !selectedCity) {
+      alert('Please select a house, date, and city to make a reservation.');
+      return;
+    }
+
+    // Create an object to send in the API call
+    const reservationData = {
+      userId: 'your_user_id_here', // Replace with the actual user ID from your application's authentication system
+      houseId: selectedHouse, // Assuming the selectedHouse value is the house ID
+      reservationDate: selectedDate,
+      location: selectedCity,
+    };
+
+    // Dispatch the createReservation async action with the reservationData object
+    dispatch(createReservation(reservationData))
+      .then(() => {
+        alert('Reservation created successfully!');
+        // Handle any additional logic or navigation after successful reservation creation
+      })
+      .catch((error) => {
+        alert(`Reservation failed: ${error.message}`);
+        // Handle any error or error notification here
+      });
   };
+
 
   return (
     <div className="reserve-page">
