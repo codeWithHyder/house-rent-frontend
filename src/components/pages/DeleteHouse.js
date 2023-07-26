@@ -24,6 +24,7 @@ const DeleteHouse = () => {
       </ul>
     </div>
   );
+  
 };
 
 export default DeleteHouse;
