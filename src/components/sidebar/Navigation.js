@@ -15,7 +15,7 @@ const Navigation = () => {
         navigate('/');
       } catch (error) {
         // Handle any potential errors during the logout process here
-        console.error('Logout failed:', error);
+        // console.error('Logout failed:', error);
       }
     }
   };
