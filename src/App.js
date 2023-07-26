@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/sidebar/Navigation';
 import MainPage from './components/pages/Mainpage';
 import HouseDetails from './components/pages/HouseDetails';
 import ReservePage from './components/pages/ReservePage';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import Navigation from './components/sidebar/Navigation';
 import './styling/style.css';
 import './styling/navbar.css';
 import './styling/mainPage.css';

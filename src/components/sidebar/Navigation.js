@@ -17,6 +17,7 @@ const Navigation = () => {
         // No need to navigate here since the useEffect will handle the redirection
       } catch (error) {
         // Handle any potential errors during the logout process here
+        // eslint-disable-next-line no-console
         console.error('Logout failed:', error);
       }
     }
