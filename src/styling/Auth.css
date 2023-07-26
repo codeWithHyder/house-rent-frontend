@@ -5,6 +5,7 @@
   justify-content: center;
   height: 100vh;
   background-color: #96bf01;
+  z-index: 3;
 }
 
 .avatar-container svg {

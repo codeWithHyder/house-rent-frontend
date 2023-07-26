@@ -46,7 +46,7 @@
 
 .house-reserve-details {
   display: grid;
-  grid-template-columns: 75%;
+  grid-template-columns: 70%;
   column-gap: 2rem;
   row-gap: 1rem;
   align-items: normal;
@@ -54,7 +54,7 @@
   border-radius: 1rem;
   margin-top: 0;
   z-index: -2;
-  background-color: #a3f834;
+  background-color: #96bf01;
   opacity: 1;
 }
 
@@ -93,6 +93,7 @@
 
 .headline {
   font-family: sans-serif;
-  font-weight: 700;
-  color: whitesmoke;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  width: 40rem;
 }
