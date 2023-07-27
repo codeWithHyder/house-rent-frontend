@@ -50,7 +50,7 @@ li {
   cursor: pointer;
   font-size: 30px;
   padding: 10px;
-  background-color: #a3f834;
+  background-color: #96bf01;
   margin-left: 20%;
   margin-top: 12rem;
 }
@@ -68,6 +68,9 @@ li {
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   width: 3rem;
+  padding-left: 1rem;
+
+  /* margin-left: 1rem; */
 }
 
 .right-arrow {
@@ -75,6 +78,8 @@ li {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   width: 3rem;
+  margin-right: 1rem;
+  padding-right: 1.5rem;
 }
 
 .slider-container {
@@ -93,7 +98,7 @@ li {
 }
 
 .btn-details {
-  background-color: #a3f834;
+  background-color: #96bf01;
   width: 5rem;
   height: 2.5rem;
   outline: whitesmoke;
@@ -109,7 +114,7 @@ li {
 }
 
 .btn-details:hover {
-  background-color: #7fce19;
+  background-color: #597005;
   transition: 0.3s ease-in-out;
 }
 

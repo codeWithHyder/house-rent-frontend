@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   width: 70%;
-  margin: 0 auto;
+  margin-left: 2rem;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -37,7 +37,7 @@
 }
 
 .add-house-form button {
-  background-color: #007bff;
+  background-color: #96bf01;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -48,5 +48,5 @@
 }
 
 .add-house-form button:hover {
-  background-color: #0056b3;
+  background-color: #60770c;
 }
