@@ -1,0 +1,86 @@
+.delete-house {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  color: rgb(56, 37, 37);
+  background-color: rgb(204, 247, 170);
+}
+
+.delete-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #62f436;
+  width: 100%;
+  color: white;
+  padding: 1% 2%;
+}
+
+.fa-arrow-left {
+  color: white;
+}
+
+.fa-arrow-left:hover {
+  cursor: pointer;
+}
+
+.delete-house-container {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.delete-house-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+  margin-bottom: 20px;
+  background-color: rgb(184, 248, 148);
+}
+
+.delete-house h1 {
+  border: none;
+  text-shadow: 2px 2px 4px #111;
+  font-size: medium;
+}
+
+.delete-items-details {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  padding: 0 5%;
+}
+
+.delete-house-items img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px #000;
+}
+
+.delete-house-items button {
+  background-color: #62f436;
+  border: 1px solid rgb(0, 0, 0);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-house-items button:hover {
+  background-color: #1daf25;
+  color: white;
+}
+
+.delete-house-items button:focus {
+  outline: none;
+}
+
+.delete-house-items span {
+  margin-right: 10px;
+}
