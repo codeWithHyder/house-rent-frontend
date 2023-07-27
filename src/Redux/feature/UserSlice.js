@@ -1,43 +1,38 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+// Function to check if the token exists in local storage and set the logged-in state accordingly
+const checkLoggedInStatus = () => {
+  const token = localStorage.getItem('token');
+  return token !== null;
+};
+
+// Define an initial logged-in state based on the token in local storage
+const initialLoggedInState = checkLoggedInStatus();
+
 export const login = createAsyncThunk('auth/login', async ({ name, password }) => {
-  const response = await axios.post('http://localhost:3000/sign_in', { user: { name, password } });
+  const response = await axios.post('https://house-rent-api.onrender.com/sign_in', {
+    user: { name, password },
+  });
   if (response.status === 200) {
     const authorizationHeader = response.headers.authorization;
     const token = authorizationHeader ? authorizationHeader.split(' ')[1] : null;
-    localStorage.setItem('token', token);
-    return token;
+    localStorage.setItem('token', token); // Store the token in local storage
+    return response.data;
   }
   return { error: response.data };
 });
 
 export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      // If the token is not present, the user is already considered logged out.
-      // You may choose to return { success: true } or thunkAPI.fulfillWithValue({ success: true })
-      return { success: true };
-    }
-
-    const response = await axios.delete('http://localhost:3000/sign_out', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await axios.delete('https://house-rent-api.onrender.com/sign_out');
 
     if (response.status === 200) {
-      localStorage.removeItem('token');
+      localStorage.removeItem('token'); // Remove the token from local storage on successful logout
       return { success: true };
     }
-
-    // If the status code is not 200, it means the logout request was not successful.
-    // You may choose to return thunkAPI.rejectWithValue with an appropriate error message.
     return thunkAPI.rejectWithValue('Logout failed');
   } catch (error) {
-    // If an error occurs, you can return thunkAPI.rejectWithValue with the error message
-    // returned from the server, or a generic error message.
     return thunkAPI.rejectWithValue('Logout failed');
   }
 });
@@ -45,10 +40,9 @@ export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) =>
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    token: null,
     isLoading: false,
     error: null,
-    loggedIn: false,
+    loggedIn: initialLoggedInState,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -56,8 +50,7 @@ const authSlice = createSlice({
       .addCase(login.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(login.fulfilled, (state, action) => {
-        state.token = action.payload;
+      .addCase(login.fulfilled, (state) => {
         state.isLoading = false;
         state.error = null;
         state.loggedIn = true;
@@ -67,6 +60,13 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(logoutUser.fulfilled, (state) => {
+        state.isLoading = false;
+        state.error = null;
+        state.loggedIn = false; // Set loggedIn to false after successful logout
+      })
+      .addCase(logoutUser.rejected, (state) => {
+        state.isLoading = false;
+        state.error = 'Logout failed';
         state.loggedIn = false;
       });
   },

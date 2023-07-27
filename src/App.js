@@ -12,6 +12,7 @@ import DeleteHouse from './components/pages/DeleteHouse';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Navigation from './components/sidebar/Navigation';
+import AddHouse from './components/pages/AddHouse';
 import './styling/style.css';
 import './styling/navbar.css';
 import './styling/mainPage.css';
@@ -19,8 +20,8 @@ import './styling/houseReserve.css';
 
 function App() {
   return (
-    <div className="main-container">
-      <Router>
+    <Router>
+      <div className="main-container">
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/addhouse" element={<AddHouse />} />
@@ -28,14 +29,20 @@ function App() {
           {/* Add more routes here */}
           <Route path="/sign_in" element={<Login />} />
           <Route path="/sign_up" element={<Register />} />
-          <Route element={<Navigation />}>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/house/:id" element={<HouseDetails />} />
-            <Route path="/reserve/:id" element={<ReservePage />} />
-          </Route>
         </Routes>
-      </Router>
-    </div>
+        <Navigation />
+        <h1 className="rent-house">Home Stay</h1>
+
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/house/:id" element={<HouseDetails />} />
+          <Route path="/reserve/:id" element={<ReservePage />} />
+          <Route path="/addhouse" element={<AddHouse />} />
+
+          {/* Add more routes here */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
