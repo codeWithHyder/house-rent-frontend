@@ -43,6 +43,7 @@ const Login = () => {
             placeholder="UserName"
             value={name}
             onChange={(event) => setname(event.target.value)}
+            required
           />
         </div>
 
@@ -53,6 +54,7 @@ const Login = () => {
             placeholder="Password"
             onChange={(event) => setPassword(event.target.value)}
             value={password}
+            required
           />
         </div>
 
