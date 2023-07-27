@@ -11,6 +11,9 @@ import './styling/style.css';
 import './styling/navbar.css';
 import './styling/mainPage.css';
 import './styling/houseReserve.css';
+import setupAxiosInterceptors from './setupAxiosInterceptors';
+
+setupAxiosInterceptors();
 
 function App() {
   return (
