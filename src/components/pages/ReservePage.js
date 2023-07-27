@@ -1,16 +1,18 @@
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createReservation } from '../../Redux/feature/reservationsSlice';
-
 
 const ReservePage = () => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
 
-  // const location = useLocation();
   const houses = useSelector((state) => state.house.houseData);
+  // eslint-disable-next-line max-len
+  const user = useSelector((state) => state.member.member); // Access the user data from the memberSlice
+  const dispatch = useDispatch();
 
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
@@ -33,7 +35,7 @@ const ReservePage = () => {
 
     // Create an object to send in the API call
     const reservationData = {
-      userId: 'your_user_id_here', // Replace with the actual user ID from your application's authentication system
+      userId: user.id, // Access the userId from the user data
       houseId: selectedHouse, // Assuming the selectedHouse value is the house ID
       reservationDate: selectedDate,
       location: selectedCity,
@@ -51,7 +53,7 @@ const ReservePage = () => {
       });
   };
 
-
+  // Rest of the component remains unchanged
   return (
     <div className="reserve-page">
       <div className="house-reserve-details">
@@ -60,8 +62,8 @@ const ReservePage = () => {
           <select className="select-house-option" id="select-house" value={selectedHouse} onChange={handleHouseChange}>
             <option value="">Select a house</option>
             {houses.map((house) => (
-              <option key={house.id} value={house.title}>
-                {house.description}
+              <option key={house.id} value={house.id}>
+                {house.name}
               </option>
             ))}
           </select>
