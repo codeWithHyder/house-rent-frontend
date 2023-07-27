@@ -10,18 +10,18 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.auth.loggedIn);
-  // const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
   const [name, setname] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (isLoggedIn) {
+    if (token && isLoggedIn) {
       setTimeout(() => {
         navigate('/');
       }, 100);
     }
-  }, [isLoggedIn, navigate]);
+  }, [isLoggedIn, token, navigate]);
 
   const handleSubmit = (event) => {
     event.preventDefault();

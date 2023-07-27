@@ -1,15 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Function to check if the token exists in local storage and set the logged-in state accordingly
-const checkLoggedInStatus = () => {
-  const token = localStorage.getItem('token');
-  return token !== null;
-};
-
-// Define an initial logged-in state based on the token in local storage
-const initialLoggedInState = checkLoggedInStatus();
-
 export const login = createAsyncThunk('auth/login', async ({ name, password }) => {
   const response = await axios.post('https://house-rent-api.onrender.com/sign_in', {
     user: { name, password },
@@ -54,7 +45,7 @@ const authSlice = createSlice({
     user: null,
     isLoading: false,
     error: null,
-    loggedIn: initialLoggedInState,
+    loggedIn: false,
   },
   reducers: {},
   extraReducers: (builder) => {
