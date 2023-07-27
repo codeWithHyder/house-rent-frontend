@@ -2,17 +2,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // API URL
-const API_URL = 'http://localhost:3000/api/v1/houses';
+const API_URL = 'https://house-rent-api.onrender.com/api/v1/houses';
 
 export const createReservation = createAsyncThunk(
   'reservations/createReservation',
-  async ({
-    userId, houseId, reservationDate, location,
-  }) => {
+  async ({ houseId, reservationDate, location }) => {
     try {
       const response = await axios.post(`${API_URL}/${houseId}/reservations`, {
         reservation: {
-          user_id: userId,
           house_id: houseId,
           reservation_date: reservationDate,
           city: location,

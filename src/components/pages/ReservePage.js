@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createReservation } from '../../Redux/feature/reservationsSlice';
 
-
 const ReservePage = () => {
+  const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
@@ -33,7 +33,6 @@ const ReservePage = () => {
 
     // Create an object to send in the API call
     const reservationData = {
-      userId: 'your_user_id_here', // Replace with the actual user ID from your application's authentication system
       houseId: selectedHouse, // Assuming the selectedHouse value is the house ID
       reservationDate: selectedDate,
       location: selectedCity,
@@ -51,28 +50,33 @@ const ReservePage = () => {
       });
   };
 
-
   return (
     <div className="reserve-page">
       <div className="house-reserve-details">
-        <p className="headline">On Home Stay ,We have range of huses/apartments from 1 BHK to 5 BHK equipped with every facility</p>
+        <p className="headline">
+          On Home Stay ,We have range of huses/apartments from 1 BHK to 5 BHK equipped with every
+          facility
+        </p>
         <label htmlFor="select-house">
-          <select className="select-house-option" id="select-house" value={selectedHouse} onChange={handleHouseChange}>
+          <select
+            className="select-house-option"
+            id="select-house"
+            value={selectedHouse}
+            onChange={handleHouseChange}
+          >
             <option value="">Select a house</option>
             {houses.map((house) => (
-              <option key={house.id} value={house.title}>
-                {house.description}
+              <option key={house.id} value={house.id}>
+                {house.name}
               </option>
             ))}
           </select>
         </label>
         <div className="date-city">
           <label htmlFor="date">
-
             <input type="date" id="date" value={selectedDate} onChange={handleDateChange} />
           </label>
           <label htmlFor="city">
-
             <select className="city" id="city" value={selectedCity} onChange={handleCityChange}>
               <option value="">Select a city</option>
               {houses.map((house) => (
