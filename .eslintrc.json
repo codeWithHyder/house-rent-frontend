@@ -20,7 +20,6 @@
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "linebreak-style": "off"
-
   },
   "overrides": [
     {

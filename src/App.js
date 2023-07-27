@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './components/pages/Mainpage';
 import HouseDetails from './components/pages/HouseDetails';
 import ReservePage from './components/pages/ReservePage';
+// import './style.css';
+// import './navbar.css';
+// import './mainPage.css';
+// import './houseReserve.css';
+import DeleteHouse from './components/pages/DeleteHouse';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Navigation from './components/sidebar/Navigation';
@@ -31,8 +36,7 @@ function App() {
           <Route path="/house/:id" element={<HouseDetails />} />
           <Route path="/reserve/:id" element={<ReservePage />} />
           <Route path="/addhouse" element={<AddHouse />} />
-
-          {/* Add more routes here */}
+          <Route path="/deletehouse" element={<DeleteHouse />} />
         </Routes>
       </div>
     </Router>
