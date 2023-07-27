@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+
 const getHousesurl = 'http://127.0.0.1:3000/api/v1/houses';
 const addHouseUrl = 'http://localhost:3000/api/v1/houses';
 const deleteHouseUrl = 'http://localhost:3000/api/v1/houses/';
