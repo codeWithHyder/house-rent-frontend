@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './components/pages/Mainpage';
 import HouseDetails from './components/pages/HouseDetails';
 import ReservePage from './components/pages/ReservePage';
+import MyReservation from './components/pages/MyReservation';
 // import './style.css';
 // import './navbar.css';
 // import './mainPage.css';
@@ -37,6 +38,7 @@ function App() {
           <Route path="/reserve/:id" element={<ReservePage />} />
           <Route path="/addhouse" element={<AddHouse />} />
           <Route path="/deletehouse" element={<DeleteHouse />} />
+          <Route path="/myreservations" element={<MyReservation />} />
         </Routes>
       </div>
     </Router>
