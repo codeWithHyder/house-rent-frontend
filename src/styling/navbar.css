@@ -16,12 +16,10 @@
 
 .navbar li {
   margin-left: 1rem;
-  /* margin-bottom: 1rem; */
   width: 14rem;
   height: 3rem;
   text-decoration: none;
   padding-left: 0.2rem;
-
 }
 
 .navbar li a {
