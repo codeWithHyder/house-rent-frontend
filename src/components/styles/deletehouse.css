@@ -6,13 +6,15 @@
   font-family: 'Arial Narrow', Arial, sans-serif;
   color: rgb(56, 37, 37);
   background-color: rgb(204, 247, 170);
+  width: 90%;
+  margin-left: 1rem;
 }
 
 .delete-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #62f436;
+  background-color: #96bf01;
   width: 100%;
   color: white;
   padding: 1% 2%;
@@ -29,7 +31,7 @@
 .delete-house-container {
   list-style: none;
   padding: 0;
-  width: 100%;
+  width: 90%;
 }
 
 .delete-house-items {
@@ -63,7 +65,7 @@
 }
 
 .delete-house-items button {
-  background-color: #62f436;
+  background-color: #96bf01;
   border: 1px solid rgb(0, 0, 0);
   color: #fff;
   padding: 8px 16px;
