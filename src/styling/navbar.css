@@ -16,9 +16,8 @@
 
 .navbar li {
   margin-left: 1rem;
-  margin-bottom: 2rem;
   width: 14rem;
-  height: 2.5rem;
+  height: 3rem;
   text-decoration: none;
   padding-left: 0.2rem;
 }
@@ -37,7 +36,7 @@
   height: 3rem;
   width: 95%;
   background-color: #96bf01;
-  transition: 1s ease-in-out;
+  transition: 0.1s ease-in-out;
   border-radius: 0.3rem;
 }
 
