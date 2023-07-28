@@ -127,9 +127,13 @@
   }
 
   .house-item {
-    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 1rem;
     padding-top: 0;
     margin-top: 0;
+    /* padding-left: 2rem; */
   }
 
   .house-detail {
