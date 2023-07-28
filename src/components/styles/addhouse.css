@@ -50,3 +50,7 @@
 .add-house-form button:hover {
   background-color: #60770c;
 }
+
+.navbar {
+  display: none;
+}
