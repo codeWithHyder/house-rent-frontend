@@ -1,11 +1,11 @@
 /* eslint-disable no-alert */
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { createReservation } from '../../Redux/feature/reservationsSlice';
+// import { createReservation } from '../../Redux/feature/reservationsSlice';
 
 const ReservePage = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
@@ -26,7 +26,7 @@ const ReservePage = () => {
   };
 
   const handleReserve = () => {
-
+    // code will be implemented
   };
 
   return (
