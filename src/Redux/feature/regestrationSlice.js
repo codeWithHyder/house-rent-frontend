@@ -3,7 +3,7 @@ import axios from 'axios';
 
 /* eslint-disable camelcase */
 export const signUp = createAsyncThunk('user/signUp', async ({ name, email, password }) => {
-  const response = await axios.post('http://localhost:3000/sign_up', {
+  const response = await axios.post('https://house-rent-api.onrender.com/sign_up', {
     user: { name, email, password },
   });
   return response.data;
@@ -12,7 +12,9 @@ export const signUp = createAsyncThunk('user/signUp', async ({ name, email, pass
 const signUpSlice = createSlice({
   name: 'user',
   initialState: {
-    data: null, status: 'initializing', error: null,
+    data: null,
+    status: 'initializing',
+    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {

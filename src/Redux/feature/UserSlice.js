@@ -1,34 +1,36 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Function to check if the token exists in local storage and set the logged-in state accordingly
-const checkLoggedInStatus = () => {
-  const token = localStorage.getItem('token');
-  return token !== null;
-};
-
-// Define an initial logged-in state based on the token in local storage
-const initialLoggedInState = checkLoggedInStatus();
-
 export const login = createAsyncThunk('auth/login', async ({ name, password }) => {
-  const response = await axios.post('https://house-rent-api.onrender.com/sign_in', {
+  const response = await axios.post('http://127.0.0.1:3000/sign_in', {
     user: { name, password },
   });
   if (response.status === 200) {
     const authorizationHeader = response.headers.authorization;
     const token = authorizationHeader ? authorizationHeader.split(' ')[1] : null;
-    localStorage.setItem('token', token); // Store the token in local storage
-    return response.data;
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(response.data.data.user));
+    return response.headers.authorization;
   }
   return { error: response.data };
 });
 
 export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    const response = await axios.delete('https://house-rent-api.onrender.com/sign_out');
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return { success: true };
+    }
+
+    const response = await axios.delete('https://house-rent-api.onrender.com/sign_out', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     if (response.status === 200) {
-      localStorage.removeItem('token'); // Remove the token from local storage on successful logout
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
       return { success: true };
     }
     return thunkAPI.rejectWithValue('Logout failed');
@@ -40,9 +42,10 @@ export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) =>
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
+    user: null,
     isLoading: false,
     error: null,
-    loggedIn: initialLoggedInState,
+    loggedIn: false,
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -50,7 +53,8 @@ const authSlice = createSlice({
       .addCase(login.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(login.fulfilled, (state) => {
+      .addCase(login.fulfilled, (state, action) => {
+        state.user = action.payload;
         state.isLoading = false;
         state.error = null;
         state.loggedIn = true;
@@ -60,6 +64,7 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(logoutUser.fulfilled, (state) => {
+        state.user = null;
         state.isLoading = false;
         state.error = null;
         state.loggedIn = false; // Set loggedIn to false after successful logout

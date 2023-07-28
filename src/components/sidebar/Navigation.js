@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../Redux/feature/UserSlice';
 
 const Navigation = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const token = localStorage.getItem('token');
-
-  const isLoggedIn = useSelector((state) => state.auth.loggedIn);
+  const token = localStorage.getItem('token');
 
   const handleLogout = async () => {
-    if (isLoggedIn) {
+    if (token) {
       try {
         await dispatch(logoutUser());
-        // No need to navigate here since the useEffect will handle the redirection
+        navigate('/sign_in');
       } catch (error) {
         // Handle any potential errors during the logout process here
         // eslint-disable-next-line no-console
@@ -22,12 +20,6 @@ const Navigation = () => {
       }
     }
   };
-
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate('/sign_in'); // Redirect to '/sign_in' when not logged in
-    }
-  }, [isLoggedIn, navigate]);
 
   return (
     <nav>
@@ -63,7 +55,7 @@ const Navigation = () => {
             DeleteHouse
           </NavLink>
         </li>
-        {isLoggedIn ? (
+        {token ? (
           <li>
             <button className="logout-btn" type="button" onClick={handleLogout}>
               Logout
