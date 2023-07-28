@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import store from './Redux/store';
+import setupAxiosInterceptors from './helpers/setupAxiosInterceptors';
+
+setupAxiosInterceptors();
 
 const container = document.getElementById('root');
 const root = createRoot(container);
