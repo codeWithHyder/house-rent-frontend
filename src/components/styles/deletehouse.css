@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #96bf01;
+  background-color: rgba(141, 197, 10, 0.788);
   width: 84%;
   color: white;
   padding: 1% 1%;
@@ -65,13 +65,14 @@
 }
 
 .delete-house-items button {
-  background-color: #96bf01;
+  background-color: rgba(141, 197, 10, 0.788);
   border: 1px solid rgb(0, 0, 0);
   color: #fff;
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  border: none;
 }
 
 .delete-house-items button:hover {
