@@ -31,11 +31,17 @@ const DeleteHouse = () => {
           <li key={house.id} className="delete-house-items">
             <img src={house.image_url} alt={house.name} />
             <div className="delete-items-details">
-              Name: {house.name}
+              Name:
+              {' '}
+              {house.name}
               <br />
-              Price: {house.rental_fee}
+              Price:
+              {' '}
+              {house.rental_fee}
               <br />
-              Location: {house.location}
+              Location:
+              {' '}
+              {house.location}
             </div>
             <button type="button" onClick={() => handleDeleteHouse(house.id)}>
               Delete
