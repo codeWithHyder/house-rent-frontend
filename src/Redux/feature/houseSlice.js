@@ -1,45 +1,38 @@
 /* eslint-disable */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axiosInstance from '../../helpers/axiosInstance';
 
-
-const getHousesurl = 'http://127.0.0.1:3000/api/v1/houses';
-const addHouseUrl = 'http://localhost:3000/api/v1/houses';
-const deleteHouseUrl = 'http://localhost:3000/api/v1/houses/';
-
-export const getHouses = createAsyncThunk('houses/getHouses', () =>
-  fetch(getHousesurl)
-    .then((res) => res.json())
-    .catch((err) => console.log(err)),
-);
-
-export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseData) => {
+export const getHouses = createAsyncThunk('houses/getHouses', async () => {
   try {
-    const response = await fetch(addHouseUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newHouseData),
-    });
-    const data = await response.json();
-    return data;
+    const response = await axiosInstance.get('api/v1/houses');
+    return response.data;
   } catch (error) {
     console.log(error);
     throw error;
   }
 });
 
-export const deleteHouse = createAsyncThunk(
-  'house/deleteHouse',
-  async (id, { rejectWithValue }) => {
-    try {
-      await fetch(`${deleteHouseUrl}/${id}`, { method: 'DELETE' });
-      return id;
-    } catch (error) {
-      return rejectWithValue(error.message); 
-    }
+export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseData, user_id) => {
+  user_id = JSON.parse(localStorage.getItem('user')).id;
+  try {
+    const response = await axiosInstance.post(`api/v1/houses?user_id=${user_id}`, newHouseData);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
-);
+});
+
+export const deleteHouse = createAsyncThunk('house/deleteHouse', async (id, user_id) => {
+  user_id = JSON.parse(localStorage.getItem('user')).id;
+  try {
+    await axiosInstance.delete(`api/v1/houses/${id}?user_id=${user_id}`);
+    return id;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+});
 
 const initialState = {
   houseData: [],

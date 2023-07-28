@@ -43,7 +43,9 @@ const DeleteHouse = () => {
               {' '}
               {house.location}
             </div>
-            <button type="button" onClick={() => handleDeleteHouse(house.id)}>Delete</button>
+            <button type="button" onClick={() => handleDeleteHouse(house.id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>

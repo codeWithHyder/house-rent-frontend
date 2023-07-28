@@ -21,6 +21,11 @@ const Navigation = () => {
     }
   };
 
+  const disableLinkStyle = {
+    pointerEvents: 'none',
+    color: 'grey',
+  };
+
   return (
     <nav>
       <img
@@ -43,16 +48,33 @@ const Navigation = () => {
             MyReservations
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/addhouse" activeClassName="active-link">
-            AddHouse
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/deletehouse" activeClassName="active-link">
-            DeleteHouse
-          </NavLink>
-        </li>
+        {token && JSON.parse(localStorage.getItem('user')).role === 'admin' ? (
+          <>
+            <li>
+              <NavLink to="/addhouse" activeClassName="active-link">
+                AddHouse
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/deletehouse" activeClassName="active-link">
+                DeleteHouse
+              </NavLink>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <NavLink to="/" activeClassName="active-link" style={disableLinkStyle}>
+                AddHouse
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/" activeClassName="active-link" style={disableLinkStyle}>
+                DeleteHouse
+              </NavLink>
+            </li>
+          </>
+        )}
         {token ? (
           <li>
             <button className="logout-btn" type="button" onClick={handleLogout}>
