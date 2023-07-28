@@ -23,8 +23,6 @@ const ReservePage = () => {
   };
 
   const handleReserve = () => {
-    // Implement your reservation logic here
-    // console.log('Reserve house:', selectedHouse, 'on', selectedDate, 'in', selectedCity);
   };
 
   return (
