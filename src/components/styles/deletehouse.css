@@ -5,7 +5,7 @@
   height: 100vh;
   font-family: 'Arial Narrow', Arial, sans-serif;
   color: rgb(56, 37, 37);
-  background-color: rgb(204, 247, 170);
+  /* background-color: rgb(204, 247, 170); */
   width: 90%;
   margin-left: 1rem;
 }
@@ -30,8 +30,8 @@
 
 .delete-house-container {
   list-style: none;
-  padding: 0;
-  width: 90%;
+  padding: 0 0 0 4rem;
+  width: 80%;
 }
 
 .delete-house-items {
@@ -75,7 +75,7 @@
 }
 
 .delete-house-items button:hover {
-  background-color: #1daf25;
+  background-color: #6e8811;;
   color: white;
 }
 
