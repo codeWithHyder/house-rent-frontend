@@ -21,16 +21,18 @@ const Navigation = () => {
     }
   };
 
+  const disableLinkStyle = {
+    pointerEvents: 'none',
+    color: 'grey',
+  };
+
   return (
     <nav>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmoDV73D3hV_4yUErBD746LWfh_cru5spf5g&usqp=CAU"
+        alt="house"
+      />
       <ul className="navbar">
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmoDV73D3hV_4yUErBD746LWfh_cru5spf5g&usqp=CAU"
-            alt="house"
-          />
-        </li>
-        <br />
         <li>
           <NavLink to="/" activeClassName="active-link" exact>
             House
@@ -46,17 +48,33 @@ const Navigation = () => {
             MyReservations
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/addhouse" activeClassName="active-link">
-            AddHouse
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/deletehouse" activeClassName="active-link">
-            DeleteHouse
-          </NavLink>
-        </li>
-        <br />
+        {token && JSON.parse(localStorage.getItem('user')).role === 'admin' ? (
+          <>
+            <li>
+              <NavLink to="/addhouse" activeClassName="active-link">
+                AddHouse
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/deletehouse" activeClassName="active-link">
+                DeleteHouse
+              </NavLink>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <NavLink to="/" activeClassName="active-link" style={disableLinkStyle}>
+                AddHouse
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/" activeClassName="active-link" style={disableLinkStyle}>
+                DeleteHouse
+              </NavLink>
+            </li>
+          </>
+        )}
         {token ? (
           <li>
             <button className="logout-btn" type="button" onClick={handleLogout}>
