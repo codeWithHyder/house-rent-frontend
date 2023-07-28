@@ -61,7 +61,6 @@
 
 /* css for small screens */
 @media only screen and (max-device-width: 480px) {
-  /* CSS rules for landscape orientation on mobile devices */
   .navbar {
     display: block;
     flex-direction: column;
@@ -71,7 +70,4 @@
     font-size: medium;
     position: relative;
   }
-   .navbar {
-    display: block;
-   }
 }
