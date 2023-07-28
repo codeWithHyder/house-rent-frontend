@@ -34,10 +34,12 @@
 
 .navbar li a:hover {
   height: 3rem;
-  width: 95%;
-  background-color: #96bf01;
-  transition: 0.1s ease-in-out;
+  width: 90%;
+  background-color: rgba(141, 197, 10, 0.788);
+  transform: scale(1.01);
+  transition: transform 0.3s ease-in-out;
   border-radius: 0.3rem;
+  color: white;
 }
 
 .navbar li img {

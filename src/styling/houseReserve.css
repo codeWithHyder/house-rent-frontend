@@ -36,7 +36,8 @@
   font-family: sans-serif;
 }
 
-.btn-reserve {
+.reserve-page .btn-reserve {
+  /* display: block; */
   height: 3rem;
   width: 41rem;
   cursor: pointer;
@@ -56,7 +57,7 @@
   border-radius: 1rem;
   margin-top: 0;
   z-index: -2;
-  background-color: #96bf01;
+  background-color: rgba(141, 197, 10, 0.788);
   opacity: 1;
 }
 
@@ -109,7 +110,7 @@
     align-items: flex-start;
     position: relative;
     margin-left: 0;
-    background-color: #96bf01;
+    background-color: rgba(100, 131, 28, 0.973);
     margin-top: 1rem;
     padding: 0.8rem;
     z-index: 1;
@@ -172,7 +173,8 @@
     margin-left: 3%;
     row-gap: 1.5rem;
     margin-right: 1%;
-    z-index: 2;
+
+    /* z-index: 2; */
   }
 
   .btn-back {

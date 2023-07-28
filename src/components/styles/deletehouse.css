@@ -6,17 +6,18 @@
   font-family: 'Arial Narrow', Arial, sans-serif;
   color: rgb(56, 37, 37);
   width: 90%;
-  margin-left: 1rem;
+  margin-left: 0;
 }
 
 .delete-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #96bf01;
-  width: 100%;
+  background-color: rgba(141, 197, 10, 0.788);
+  width: 84%;
   color: white;
-  padding: 1% 2%;
+  padding: 1% 1%;
+  margin-left: 12rem;
 }
 
 .fa-arrow-left {
@@ -64,13 +65,13 @@
 }
 
 .delete-house-items button {
-  background-color: #96bf01;
-  border: 1px solid rgb(0, 0, 0);
+  background-color: rgba(141, 197, 10, 0.788);
   color: #fff;
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  border: none;
 }
 
 .delete-house-items button:hover {
@@ -92,5 +93,11 @@
     list-style: none;
     padding: 0 0 0 0;
     width: 100%;
+    margin-left: 5em;
   }
+
+  /* .navbar {
+    position: relative;
+    z-index: -1;
+  } */
 }
