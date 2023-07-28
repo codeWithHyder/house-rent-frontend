@@ -29,7 +29,7 @@
 
 .delete-house-container {
   list-style: none;
-  /* padding: 0 0 0 4rem; */
+  padding: 0 0 0 12rem;
   width: 100%;
 }
 
@@ -84,4 +84,15 @@
 
 .delete-house-items span {
   margin-right: 10px;
+}
+
+/* css for small devices */
+@media only screen and (max-width: 480px) {
+
+  .delete-house-container {
+      list-style: none;
+      padding: 0 0 0 0;
+      width: 100%;
+    }
+  
 }
