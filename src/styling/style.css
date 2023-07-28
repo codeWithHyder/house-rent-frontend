@@ -89,6 +89,10 @@
   border-radius: 1rem;
 }
 
+.reserve-page .btn-reserve {
+  background-color: antiquewhite;
+}
+
 /* css for small devices */
 @media only screen and (max-device-width: 480px) {
   .main-container {
