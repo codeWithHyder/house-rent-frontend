@@ -24,6 +24,12 @@ function App() {
   return (
     <Router>
       <div className="main-container">
+        <Routes>
+          <Route path="/sign_in" element={<Login />} />
+          <Route path="/sign_up" element={<Register />} />
+          <Route path="/addhouse" element={<AddHouse />} />
+          <Route path="/deletehouse" element={<DeleteHouse />} />
+        </Routes>
         <Navigation />
         <h1 className="rent-house">Home Stay</h1>
 
@@ -31,10 +37,6 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/house/:id" element={<HouseDetails />} />
           <Route path="/reserve/:id" element={<ReservePage />} />
-          <Route path="/addhouse" element={<AddHouse />} />
-          <Route path="/deletehouse" element={<DeleteHouse />} />
-          <Route path="/sign_in" element={<Login />} />
-          <Route path="/sign_up" element={<Register />} />
         </Routes>
       </div>
     </Router>

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const login = createAsyncThunk('auth/login', async ({ name, password }) => {
-  const response = await axios.post('http://127.0.0.1:3000/sign_in', {
+  const response = await axios.post('https://house-rent-api.onrender.com/sign_in', {
     user: { name, password },
   });
   if (response.status === 200) {
