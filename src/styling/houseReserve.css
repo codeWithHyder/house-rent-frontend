@@ -36,7 +36,7 @@
   font-family: sans-serif;
 }
 
- .reserve-page .btn-reserve {
+.reserve-page .btn-reserve {
   /* display: block; */
   height: 3rem;
   width: 41rem;
@@ -173,6 +173,7 @@
     margin-left: 3%;
     row-gap: 1.5rem;
     margin-right: 1%;
+
     /* z-index: 2; */
   }
 

@@ -35,7 +35,7 @@
 .navbar li a:hover {
   height: 3rem;
   width: 90%;
-  background-color: rgba(141, 197, 10, .788);
+  background-color: rgba(141, 197, 10, 0.788);
   transform: scale(1.01);
   transition: transform 0.3s ease-in-out;
   border-radius: 0.3rem;

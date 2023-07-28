@@ -51,7 +51,7 @@ li {
   cursor: pointer;
   font-size: 30px;
   padding: 5px;
-  background-color: rgba(141, 197, 10, .788);
+  background-color: rgba(141, 197, 10, 0.788);
   margin-left: 20%;
   margin-top: 12rem;
 }
@@ -73,6 +73,7 @@ li {
 
 .right-arrow {
   right: 0;
+
   /* border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem; */
   width: 3rem;
@@ -96,7 +97,7 @@ li {
 }
 
 .btn-details {
-  background-color: rgba(141, 197, 10, .788);
+  background-color: rgba(141, 197, 10, 0.788);
   width: 5rem;
   height: 2.5rem;
   outline: whitesmoke;
