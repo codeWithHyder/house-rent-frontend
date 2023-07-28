@@ -45,7 +45,7 @@ const HouseDetails = () => {
   };
 
   return (
-    <div className="house-details">
+    <div className="house-detail">
       <div className="image-section">
         <img className="dis-img" src={house.image_url} alt={house.name} />
       </div>
@@ -57,12 +57,14 @@ const HouseDetails = () => {
         <p className="house-dtls">Type: {house.category}</p>
         <p className="house-dtls">Location: {house.location}</p>
         <p className="house-dtls">Date Built: {house.date_built}</p>
-        <button className="btn-book" type="button" onClick={handleReserve}>
-          Reserve
-        </button>
-        <button className="btn-book" type="button" onClick={() => navigate('/')}>
-          &#8592; Back
-        </button>
+        <div className="btn-detail">
+          <button className="btn-book1" type="button" onClick={handleReserve}>
+            Reserve
+          </button>
+          <button className="btn-book1" type="button" onClick={() => navigate('/')}>
+            &#8592; Back
+          </button>
+        </div>
       </div>
     </div>
   );

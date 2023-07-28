@@ -58,3 +58,20 @@
 .logout-btn:hover {
   background-color: darkred;
 }
+
+/* css for small screens */
+@media only screen and (max-device-width: 480px) {
+  /* CSS rules for landscape orientation on mobile devices */
+  .navbar {
+    display: block;
+    flex-direction: column;
+    width: auto;
+    z-index: 1;
+    row-gap: 1rem;
+    font-size: medium;
+    position: relative;
+  }
+   .navbar {
+    display: block;
+   }
+}
