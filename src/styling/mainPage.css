@@ -2,6 +2,7 @@
 .main-page {
   width: 80%;
   display: flex;
+  flex-direction: row;
   list-style: none;
   padding: 0;
   margin-top: 7rem;
@@ -69,8 +70,6 @@ li {
   border-bottom-left-radius: 1rem;
   width: 3rem;
   padding-left: 1rem;
-
-  /* margin-left: 1rem; */
 }
 
 .right-arrow {
@@ -125,5 +124,64 @@ li {
 
   100% {
     transform: translateX(calc(-100% * var(--index)));
+  }
+}
+
+/* CSS FOR SMALL DEVICES */
+
+@media only screen and (max-width: 480px) {
+  .main-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin-top: 7rem;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-left: auto;
+  }
+
+  .slider-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 50%;
+    margin-left: 5rem;
+  }
+
+  .btn-details {
+    background-color: #96bf01;
+    width: 5rem;
+    height: 2.5rem;
+    outline: whitesmoke;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    border-radius: 1rem;
+    color: whitesmoke;
+    position: relative;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .main-page li.img-house1 {
+    width: 50%;
+    height: 50%;
+    border-radius: 10rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
+
+  .navbar {
+    display: block;
+    z-index: 1;
   }
 }

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 17%;
+  width: 19%;
   background-color: rgb(255, 255, 255);
   list-style: none;
   padding: 1rem;
@@ -57,4 +57,17 @@
 
 .logout-btn:hover {
   background-color: darkred;
+}
+
+/* css for small screens */
+@media only screen and (max-device-width: 480px) {
+  .navbar {
+    display: block;
+    flex-direction: column;
+    width: auto;
+    z-index: 1;
+    row-gap: 1rem;
+    font-size: medium;
+    position: relative;
+  }
 }

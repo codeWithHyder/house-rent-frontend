@@ -1,11 +1,11 @@
 /* eslint-disable no-alert */
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { createReservation } from '../../Redux/feature/reservationsSlice';
+// import { createReservation } from '../../Redux/feature/reservationsSlice';
 
 const ReservePage = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
@@ -26,29 +26,7 @@ const ReservePage = () => {
   };
 
   const handleReserve = () => {
-    // Check if all the necessary fields are filled
-    if (!selectedHouse || !selectedDate || !selectedCity) {
-      alert('Please select a house, date, and city to make a reservation.');
-      return;
-    }
-
-    // Create an object to send in the API call
-    const reservationData = {
-      houseId: selectedHouse, // Assuming the selectedHouse value is the house ID
-      reservationDate: selectedDate,
-      location: selectedCity,
-    };
-
-    // Dispatch the createReservation async action with the reservationData object
-    dispatch(createReservation(reservationData))
-      .then(() => {
-        alert('Reservation created successfully!');
-        // Handle any additional logic or navigation after successful reservation creation
-      })
-      .catch((error) => {
-        alert(`Reservation failed: ${error.message}`);
-        // Handle any error or error notification here
-      });
+    // code will be implemented
   };
 
   return (
