@@ -27,7 +27,7 @@
 
 # Houserent-frontend📖 <a name="about-project"></a>
 
-**Houserent-frontend** Is a webpage that displays list of Houses our back end api [houserent-back-end](https://github.com/alexiscyber14/house-rent-backend)
+**Houserent-frontend** Is a webpage that displays list of Houses from the back end api [houserent-back-end](https://github.com/alexiscyber14/house-rent-backend)
 
 The goal of this project is to display the ability to implement a full stack web application by connecting the back end to the front end
 
