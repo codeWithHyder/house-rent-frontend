@@ -6,7 +6,7 @@
   font-family: 'Arial Narrow', Arial, sans-serif;
   color: rgb(56, 37, 37);
   width: 90%;
-  margin-left: 1rem;
+  margin-left: 0;
 }
 
 .delete-nav {
@@ -14,9 +14,10 @@
   justify-content: space-between;
   align-items: center;
   background-color: #96bf01;
-  width: 100%;
+  width: 84%;
   color: white;
-  padding: 1% 2%;
+  padding: 1% 1%;
+  margin-left: 12rem;
 }
 
 .fa-arrow-left {
@@ -92,5 +93,11 @@
     list-style: none;
     padding: 0 0 0 0;
     width: 100%;
+    margin-left: 5em;
   }
+
+  /* .navbar {
+    position: relative;
+    z-index: -1;
+  } */
 }
