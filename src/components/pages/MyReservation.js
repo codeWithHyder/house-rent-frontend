@@ -36,14 +36,17 @@ const MyReservation = () => {
 
   return (
     <div className="center-container">
-      <h2> My Reservation </h2>
+      <div className="text">
+        <h2> My Reservation </h2>
+        <p>Here You can Find All Your Booked Houses</p>
+      </div>
       {reservations.length === 0 ? <div>No reservations found.</div> : null}
 
       {reservations.length > 0 && (
         <table className="reservation-table">
           <thead>
             <tr>
-              <th className="green-column">House Name</th>
+              <th className="green-column">House </th>
               <th className="green-column">City</th>
               <th className="green-column">Reservation Date</th>
             </tr>
