@@ -29,8 +29,6 @@ function App() {
           <Route path="/deletehouse" element={<DeleteHouse />} />
         </Routes>
         <Navigation />
-        <h1 className="rent-house">Home Stay</h1>
-
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/house/:id" element={<HouseDetails />} />
