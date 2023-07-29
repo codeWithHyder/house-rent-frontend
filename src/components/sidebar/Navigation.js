@@ -28,11 +28,16 @@ const Navigation = () => {
 
   return (
     <nav>
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmoDV73D3hV_4yUErBD746LWfh_cru5spf5g&usqp=CAU"
-        alt="house"
-      />
+
       <ul className="navbar">
+        <li>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmoDV73D3hV_4yUErBD746LWfh_cru5spf5g&usqp=CAU"
+            alt="house"
+          />
+        </li>
+        <br />
+        <br />
         <li>
           <NavLink to="/" activeClassName="active-link" exact>
             House
