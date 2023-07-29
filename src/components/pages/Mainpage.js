@@ -48,8 +48,8 @@ const MainPage = () => {
               <img className="img-house1" src={house.image_url} alt={house.id} />
               <div className="house-item">
                 <div className="house-info">
-                  {/* <p>{house.type}</p> */}
-                  {/* <p>{house.name}</p> */}
+                  <p>  {house.category}</p>
+                  <p>{house.description}</p>
                 </div>
                 <Link to={`/house/${house.id}`}>
                   <button className="btn-details" type="button">

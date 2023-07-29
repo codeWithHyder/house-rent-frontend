@@ -15,7 +15,7 @@ const HouseDetails = () => {
   useEffect(() => {
     const fetchHousesData = async () => {
       try {
-        const response = await fetch('https://house-rent-api.onrender.com/api/v1/houses');
+        const response = await fetch('/api/v1/houses');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }

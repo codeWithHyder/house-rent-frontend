@@ -4,7 +4,7 @@ import axiosInstance from '../../helpers/axiosInstance';
 
 export const getHouses = createAsyncThunk('houses/getHouses', async () => {
   try {
-    const response = await axiosInstance.get('api/v1/houses');
+    const response = await axiosInstance.get('http://127.0.0.1:3000/api/v1/houses');
     return response.data;
   } catch (error) {
     console.log(error);
