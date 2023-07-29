@@ -191,7 +191,7 @@ li {
     z-index: 1;
   }
 
-    .main-page li p {
-      display: none;
-    }
+  .main-page li p {
+    display: none;
+  }
 }
