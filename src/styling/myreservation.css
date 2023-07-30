@@ -5,7 +5,15 @@
     margin-top: 10px;
   }
   
-  .reservation-table th,
+
+  .reservation-table th{
+    border: 4px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    background-color:#97bf0f;
+    height: 60px;
+  }
+
   .reservation-table td {
     border: 2px solid #ccc;
     padding: 8px;
@@ -13,7 +21,7 @@
   }
   
   .green-column {
-    color: rgba(141, 197, 10, 0.788);
+    color: white;
   }
 
   .center-container{
@@ -31,6 +39,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 20%;
-    margin-left: 10%;
+    padding-top: 10%;
+    margin-left: 16%;
+  }
+
+  .title {
+    color: black;
+    font-size: xx-large;
+    letter-spacing:.3px;
+        
+
   }

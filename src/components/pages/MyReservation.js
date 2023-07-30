@@ -37,8 +37,8 @@ const MyReservation = () => {
   return (
     <div className="center-container">
       <div className="text">
-        <h2> My Reservation </h2>
-        <p>Here You can Find All Your Booked Houses</p>
+        <h1 className="title"> My Reservations </h1>
+        <p className="desc">Here You can Find All Your Booked Houses</p>
       </div>
       {reservations.length === 0 ? <div>No reservations found.</div> : null}
 
