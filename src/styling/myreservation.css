@@ -1,52 +1,50 @@
 
 .reservation-table {
-    width: 200%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
+  width: 200%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
 
-  .reservation-table th{
-    border: 4px solid #ccc;
-    padding: 8px;
-    text-align: center;
-    background-color:#97bf0f;
-    height: 60px;
-  }
 
-  .reservation-table td {
-    border: 2px solid #ccc;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .green-column {
-    color: white;
-  }
+.reservation-table th {
+  border: 4px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  background-color: #97bf0f;
+  height: 60px;
+}
 
-  .center-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 7rem;
-    position: absolute;
-    margin-left: 30%;
-    row-gap: 1.5rem;
-  }
+.reservation-table td {
+  border: 2px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
 
-  .text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10%;
-    margin-left: 16%;
-  }
+.green-column {
+  color: white;
+}
 
-  .title {
-    color: black;
-    font-size: xx-large;
-    letter-spacing:.3px;
-        
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 7rem;
+  position: absolute;
+  margin-left: 30%;
+  row-gap: 1.5rem;
+}
 
-  }
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+  margin-left: 16%;
+}
+
+.title {
+  color: black;
+  font-size: xx-large;
+  letter-spacing: 0.3px;
+}
