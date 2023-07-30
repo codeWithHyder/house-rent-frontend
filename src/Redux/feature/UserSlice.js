@@ -12,6 +12,9 @@ export const login = createAsyncThunk('auth/login', async ({ name, password }) =
     localStorage.setItem('user', JSON.stringify(response.data.data.user));
     return response.headers.authorization;
   }
+  if (response.status === 401) {
+    return { error: response.status };
+  }
   return { error: response.data };
 });
 
