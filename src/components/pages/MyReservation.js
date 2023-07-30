@@ -33,6 +33,14 @@ const MyReservation = () => {
     }
     dispatch(getHouses()); // Fetch the list of houses if needed
   }, [dispatch, user, dataFetched]);
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const dateObj = new Date(dateString);
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const year = dateObj.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
 
   return (
     <div className="center-container">
@@ -56,7 +64,7 @@ const MyReservation = () => {
               <tr key={reservation.id}>
                 <td>{house.find((h) => h.id === reservation.house_id)?.name}</td>
                 <td>{reservation.city}</td>
-                <td>{reservation.reservation_date}</td>
+                <td>{formatDate(reservation.reservation_date)}</td>
               </tr>
             ))}
           </tbody>
