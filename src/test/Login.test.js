@@ -34,7 +34,7 @@ describe('Login', () => {
     const passwordInput = getByPlaceholderText('Password');
 
     // Fill in the form inputs
-    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-    fireEvent.change(passwordInput, { target: { value: 'password123' } });
+    fireEvent.change(emailInput, { target: { value: 'hisoka@example.com' } });
+    fireEvent.change(passwordInput, { target: { value: 'password' } });
   });
 });
