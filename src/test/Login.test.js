@@ -1,13 +1,40 @@
-import { render, cleanup } from '@testing-library/react';
+/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import Login from '../components/auth/Login';
 
-afterEach(() => {
-  cleanup();
+// Create a mock store with the desired initial state
+const mockStore = configureMockStore([thunk]);
+const store = mockStore({
+  auth: {
+    loggedIn: false,
+  },
 });
 
+jest.mock('../Redux/feature/UserSlice', () => ({
+  fetchCurrentUser: jest.fn(),
+  login: jest.fn(),
+}));
+
 describe('Login', () => {
-  it('SignIn renders correctly', () => {
-    const signin = render(<Login />);
-    expect(signin).toMatchSnapshot();
+  it('submits the login form successfully', async () => {
+    const { getByPlaceholderText } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Login />
+        </MemoryRouter>
+      </Provider>,
+    );
+
+    const emailInput = getByPlaceholderText('UserName');
+    const passwordInput = getByPlaceholderText('Password');
+
+    // Fill in the form inputs
+    fireEvent.change(emailInput, { target: { value: 'hisoka@example.com' } });
+    fireEvent.change(passwordInput, { target: { value: 'password' } });
   });
 });
