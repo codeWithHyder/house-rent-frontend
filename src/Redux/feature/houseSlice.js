@@ -1,10 +1,10 @@
 /* eslint-disable */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axiosInstance from '../../helpers/axiosInstance';
+import axios from 'axios';
 
 export const getHouses = createAsyncThunk('houses/getHouses', async () => {
   try {
-    const response = await axiosInstance.get('/api/v1/houses');
+    const response = await axios.get('/api/v1/houses');
     return response.data;
   } catch (error) {
     console.log(error);
@@ -15,7 +15,7 @@ export const getHouses = createAsyncThunk('houses/getHouses', async () => {
 export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseData, user_id) => {
   user_id = JSON.parse(localStorage.getItem('user')).id;
   try {
-    const response = await axiosInstance.post(`api/v1/houses?user_id=${user_id}`, newHouseData);
+    const response = await axios.post(`api/v1/houses?user_id=${user_id}`, newHouseData);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -26,7 +26,7 @@ export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseDa
 export const deleteHouse = createAsyncThunk('house/deleteHouse', async (id, user_id) => {
   user_id = JSON.parse(localStorage.getItem('user')).id;
   try {
-    await axiosInstance.delete(`api/v1/houses/${id}?user_id=${user_id}`);
+    await axios.delete(`api/v1/houses/${id}?user_id=${user_id}`);
     return id;
   } catch (error) {
     console.log(error);

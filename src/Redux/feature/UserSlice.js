@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axiosInstance from '../../helpers/axiosInstance';
+import axios from 'axios';
 
 export const login = createAsyncThunk('auth/login', async ({ name, password }) => {
-  const response = await axiosInstance.post('https://house-rent-api.onrender.com/sign_in', {
+  const response = await axios.post('https://house-rent-api.onrender.com/sign_in', {
     user: { name, password },
   });
   if (response.status === 200) {
@@ -25,7 +25,7 @@ export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) =>
       return { success: true };
     }
 
-    const response = await axiosInstance.delete('https://house-rent-api.onrender.com/sign_out', {
+    const response = await axios.delete('https://house-rent-api.onrender.com/sign_out', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
