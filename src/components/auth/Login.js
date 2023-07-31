@@ -10,10 +10,18 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.auth.loggedIn);
+  const error = useSelector((state) => state.auth.error);
   const token = localStorage.getItem('token');
   const [name, setname] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const errorStyle = {
+    color: 'red',
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+    marginBottom: '10px',
+  };
 
   useEffect(() => {
     if (token && isLoggedIn) {
@@ -57,8 +65,9 @@ const Login = () => {
             required
           />
         </div>
+        {error && error.includes('401') && <i style={errorStyle}>Invalid UserName or Password</i>}
 
-        {loading ? (
+        {loading && !error ? (
           <button type="submit" className="login-button" disabled>
             Logging in...
           </button>

@@ -51,6 +51,7 @@ const reservationSlice = createSlice({
         state.loading = false;
         state.error = null;
         state.reservations.push(action.payload);
+        // saveReservationsToLocalStorage(state.reservations); // Save reservations to local storage
       })
       .addCase(createReservation.rejected, (state, action) => {
         state.loading = false;
@@ -64,6 +65,7 @@ const reservationSlice = createSlice({
         state.loading = false;
         state.error = null;
         state.reservations = action.payload;
+        // saveReservationsToLocalStorage(state.reservations); // Save reservations to local storage
       })
       .addCase(fetchReservations.rejected, (state, action) => {
         state.loading = false;

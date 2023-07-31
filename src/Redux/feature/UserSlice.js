@@ -12,6 +12,9 @@ export const login = createAsyncThunk('auth/login', async ({ name, password }) =
     localStorage.setItem('user', JSON.stringify(response.data.data.user));
     return response.headers.authorization;
   }
+  if (response.status === 401) {
+    return { error: response.status };
+  }
   return { error: response.data };
 });
 
@@ -31,6 +34,7 @@ export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) =>
     if (response.status === 200) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
+      localStorage.removeItem('houses');
       return { success: true };
     }
     return thunkAPI.rejectWithValue('Logout failed');
