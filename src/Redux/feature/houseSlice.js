@@ -5,6 +5,7 @@ import axiosInstance from '../../helpers/axiosInstance';
 export const getHouses = createAsyncThunk('houses/getHouses', async () => {
   try {
     const response = await axiosInstance.get('/api/v1/houses');
+    localStorage.setItem('houses', JSON.stringify(response.data));
     return response.data;
   } catch (error) {
     console.log(error);
@@ -16,6 +17,7 @@ export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseDa
   user_id = JSON.parse(localStorage.getItem('user')).id;
   try {
     const response = await axiosInstance.post(`api/v1/houses?user_id=${user_id}`, newHouseData);
+    localStorage.setItem('houses', JSON.stringify(response.data));
     return response.data;
   } catch (error) {
     console.log(error);
@@ -87,6 +89,7 @@ const houseSlice = createSlice({
     builder.addCase(deleteHouse.fulfilled, (state, action) => {
       const deletedHouseId = action.payload;
       const filteredHouses = state.houseData.filter((item) => item.id !== deletedHouseId);
+      localStorage.setItem('houses', JSON.stringify(filteredHouses));
       return {
         ...state,
         houseData: filteredHouses,

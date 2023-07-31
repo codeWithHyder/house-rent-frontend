@@ -34,6 +34,7 @@ export const logoutUser = createAsyncThunk('auth/logout', async (_, thunkAPI) =>
     if (response.status === 200) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
+      localStorage.removeItem('houses');
       return { success: true };
     }
     return thunkAPI.rejectWithValue('Logout failed');
