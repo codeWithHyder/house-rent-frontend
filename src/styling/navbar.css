@@ -54,12 +54,19 @@
   border: none;
   padding: 8px 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .logout-btn:hover {
   background-color: darkred;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.log_btn {
+  padding-top: 15px;
+
+}
 /* css for small screens */
 @media only screen and (max-device-width: 480px) {
   .navbar {

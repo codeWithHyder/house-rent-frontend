@@ -58,6 +58,10 @@ input {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
 }
 
 .back-button {

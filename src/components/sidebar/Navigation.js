@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { TbLogout } from 'react-icons/tb';
 import { logoutUser } from '../../Redux/feature/UserSlice';
 
 const Navigation = () => {
@@ -88,9 +89,10 @@ const Navigation = () => {
           </>
         )}
         {token ? (
-          <li>
+          <li className="log_btn">
             <button className="logout-btn" type="button" onClick={handleLogout}>
               Logout
+              <TbLogout />
             </button>
           </li>
         ) : (
