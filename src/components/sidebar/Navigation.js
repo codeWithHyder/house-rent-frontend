@@ -28,7 +28,6 @@ const Navigation = () => {
 
   return (
     <nav>
-
       <ul className="navbar">
         <li>
           <img
@@ -48,11 +47,19 @@ const Navigation = () => {
             ReserveHouse
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/myreservations" activeClassName="active-link">
-            MyReservations
-          </NavLink>
-        </li>
+        {token ? (
+          <li>
+            <NavLink to="/myreservations" activeClassName="active-link">
+              MyReservations
+            </NavLink>
+          </li>
+        ) : (
+          <li>
+            <NavLink to="/" style={disableLinkStyle}>
+              MyReservations
+            </NavLink>
+          </li>
+        )}
         {token && JSON.parse(localStorage.getItem('user')).role === 'admin' ? (
           <>
             <li>
