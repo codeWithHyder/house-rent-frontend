@@ -63,6 +63,12 @@ describe('AddHouse Component', () => {
         expect(screen.getByTestId("category-input")).toBeInTheDocument();
     });
 
+    it('house-img-url-input element is rendered', () =>{
+        renderWithRedux(<AddHouse />);
+        expect(screen.getByTestId("house-img-url")).toBeInTheDocument();
+    });
+
+  
     
 
     
