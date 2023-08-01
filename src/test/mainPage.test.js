@@ -100,3 +100,21 @@ test('renders prev arrow', async () => {
         expect(arrowElement).toBeInTheDocument();
     });
 });
+
+
+test('renders List items', async () => {
+    const history = createMemoryHistory();
+  
+    render(
+        <Provider store={store}>
+            <MemoryRouter history={history}>
+                <MainPage />
+            </MemoryRouter>
+      </Provider>
+    );
+  
+    await waitFor(() => {
+        const listItems = screen.getAllByTestId('listitem');
+        expect(listItems).toHaveLength(2);
+    });
+});
