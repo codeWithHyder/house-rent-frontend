@@ -20,7 +20,7 @@
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "linebreak-style": "off",
-    "react/prop-types": "off"
+    "react/prop-types": 0
   },
   "overrides": [
     {
