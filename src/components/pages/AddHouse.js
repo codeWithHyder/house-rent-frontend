@@ -120,7 +120,7 @@ const AddHouse = () => {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Add House</button>
       </form>
     </div>
   );

@@ -34,7 +34,7 @@ The goal of this project is to display the ability to implement a full stack web
 ## 🛠 Built With <a name="built-with"></a>
 
 - HTML.
-- css.
+- Css.
 - javaScript.
 - React & redux
 
@@ -157,9 +157,9 @@ You can deploy this project using: github pages or any host of your choice
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **responsive for all devices**
-- [ ] **adding additional pages**
-- [ ] **impelment animations and transitions**
+- [ ] **Responsive for all devices**
+- [ ] **Adding additional pages**
+- [ ] **Impelment animations and transitions**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
