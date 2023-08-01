@@ -29,4 +29,12 @@ const initialState = {
     },
 };
   
+// Create the Redux store with Redux Toolkit's configureStore
+const store = configureStore({
+    reducer: {
+        house: houseSlice, // Add other reducers here if needed
+    },
+    preloadedState: initialState,
+    middleware: [thunk], // Add other middlewares here if needed
+});
   
