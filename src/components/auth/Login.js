@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaUser, FaLock } from 'react-icons/fa';
+import { CgLogOut } from 'react-icons/cg';
 import { MdSupervisedUserCircle } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../Redux/feature/UserSlice';
@@ -69,11 +70,12 @@ const Login = () => {
 
         {loading && !error ? (
           <button type="submit" className="login-button" disabled>
-            Logging in...
+            ...
           </button>
         ) : (
           <button type="submit" className="login-button">
             Login
+            <CgLogOut />
           </button>
         )}
         <p>
