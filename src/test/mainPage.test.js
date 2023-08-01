@@ -38,3 +38,29 @@ const store = configureStore({
     middleware: [thunk], // Add other middlewares here if needed
 });
   
+  // Test if the loading spinner is displayed when isLoading is true
+  test('renders loading spinner when data is loading', () => {
+    const loadingState = {
+      house: {
+        ...initialState.house,
+        isLoading: true,
+      },
+    };
+    const loadingStore = configureStore({
+      reducer: {
+        house: houseSlice,
+      },
+      preloadedState: loadingState,
+      middleware: [thunk],
+    });
+  
+    render(
+      <Provider store={loadingStore}>
+        <MainPage />
+      </Provider>
+    );
+  
+    const loadingElement = screen.getByText('Loading...');
+    expect(loadingElement).toBeInTheDocument();
+});
+  
