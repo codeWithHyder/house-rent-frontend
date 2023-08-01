@@ -63,4 +63,22 @@ const store = configureStore({
     const loadingElement = screen.getByText('Loading...');
     expect(loadingElement).toBeInTheDocument();
 });
+
+
+  // Test if the house items are rendered correctly when data is available
+  test('renders next arrow', async () => {
+    const history = createMemoryHistory();
   
+    render(
+        <Provider store={store}>
+            <MemoryRouter history={history}>
+                <MainPage />
+            </MemoryRouter>
+      </Provider>
+    );
+  
+    await waitFor(() => {
+        const arrowElement = screen.queryByTestId('nxt-arrow');
+        expect(arrowElement).toBeInTheDocument();
+    });
+});
