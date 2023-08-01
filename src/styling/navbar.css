@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  width: 17.5%;
   background-color: rgb(255, 255, 255);
   list-style: none;
   padding: 1rem;
@@ -97,13 +96,15 @@
     padding-top: 1%;
     height: 100vh;
     gap: 10%;
-    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     overflow: auto;
   }
   
+  .house_mobile {
+    display: none;
+  }
   .nav-itm-container {
     padding-top: 100px;
     text-align: left;

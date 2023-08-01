@@ -68,59 +68,39 @@ const MainPage = () => {
   return (
     <>
       <div className="slider-container">
+        {/* Remove the slide-animation class */}
         <FontAwesomeIcon icon={faBars} onClick={openModal} className='fa-bars'/>
         { isModalOpen && (
           <div>
             <Navigation closeModal={closeModal}/>  
           </div>
         )}
-        <div className='slide-buttons-houses'>
-            <button type="button" className="arrow-left-arrow" onClick={handlePrevSlide} data-testid="prev-arrow">
-              &#10094;
-            </button>
-            <div className='home-title-head'>
-              <div className='available-houses'>
-                <h2 className="avail-title">Available Houses</h2>
-                <h4>Please select a house</h4>
+        <ul className="main-page" style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
+          {houses.map((house) => (
+              <li key={house.id}>
+              <img className="img-house1" src={house.image_url} alt={house.id} />
+              <div className="house-item">
+                <div className="house-infos">
+                  <h3>  {house.category}</h3>
+                  <p>{house.description}</p>
+                </div>
+                <Link to={`/house/${house.id}`}>
+                  <button className="btn-details" type="button">
+                    Details
+                  </button>
+                </Link>
               </div>
-              <ul className="main-page" style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
-                {houses.map((house) => (
-                  <li key={house.id} data-testid="listitem">
-                    <img className="img-house1" src={house.image_url} alt={house.id} />
-                    <div className="house-item">
-                      <div className="house-info">
-                        <p>  {house.category}</p>
-                        <p>{house.description}</p>
-                      </div>
-                      <Link to={`/house/${house.id}`}>
-                        <button className="btn-details" type="button">
-                          Details
-                        </button>
-                      </Link>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <div className='arrow-container'>
-                <button type="button" className="mob-left-arrow" onClick={handlePrevSlide} data-testid="prev-arrow">
-                  &#10094;
-                </button>
+            </li>
 
-                <button type="button" className="mob-right-arrow" onClick={handleNextSlide} data-testid="nxt-arrow">
-                  &#10095;
-                </button>
-
-              </div>
-            </div>
-            
-            
-          <button type="button" className="arrow-right-arrow" onClick={handleNextSlide} data-testid="nxt-arrow">
-            &#10095;
-          </button>
-        </div>     
+          ))}
+        </ul>
       </div>
-      
-      
+      <button type="button" className="arrow left-arrow" onClick={handlePrevSlide}>
+        &#10094;
+      </button>
+      <button type="button" className="arrow right-arrow" onClick={handleNextSlide}>
+        &#10095;
+      </button>
     </>
   );
 };

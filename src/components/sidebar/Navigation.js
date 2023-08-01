@@ -41,8 +41,8 @@ const Navigation = ({ closeModal }) => {
             <FontAwesomeIcon icon={faX} onClick={closeModal} className="fa-close" />  
           </div>
           <ul className="nav-itm-container">
-            <li>
-              <NavLink to="/" activeClassName="active-link" exact>
+            <li className='house_mobile'>
+              <NavLink to="/"  activeClassName="active-link" exact>
                 House
               </NavLink>
             </li>
