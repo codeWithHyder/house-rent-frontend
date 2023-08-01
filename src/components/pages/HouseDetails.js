@@ -2,7 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { setHouses } from '../../Redux/feature/houseSlice';
+import Navigation from '../../components/sidebar/Navigation'
+import '../../styling/navbar.css'
+import '../../styling/detailspage.css'
 
 const HouseDetails = () => {
   const dispatch = useDispatch();
@@ -11,6 +16,18 @@ const HouseDetails = () => {
   const detailData = useSelector((state) => state.house.houseData);
   const { id } = useParams();
   const house = detailData.find((house) => house.id === parseInt(id, 10));
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleInitialModalState = () => {
+      setIsModalOpen(window.innerWidth > 760);
+    };
+    handleInitialModalState();
+    window.addEventListener('resize', handleInitialModalState);
+    return () => {
+      window.removeEventListener('resize', handleInitialModalState);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchHousesData = async () => {
@@ -21,10 +38,10 @@ const HouseDetails = () => {
         }
         const data = await response.json();
         dispatch(setHouses(data));
-        setIsLoading(false); // Set loading to false once data is fetched
+        setIsLoading(false); 
       } catch (error) {
         console.error('Error fetching house data:', error);
-        setIsLoading(false); // Set loading to false if there is an error
+        setIsLoading(false); 
       }
     };
 
@@ -32,7 +49,7 @@ const HouseDetails = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // Show a loading message while data is being fetched
+    return <div>Loading...</div>;
   }
 
   if (!house) {
@@ -44,29 +61,51 @@ const HouseDetails = () => {
     navigate(`/reserve/${house.id}`, { state: { house } });
   };
 
+  
+  const openModal = () => {
+      setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  
+
   return (
-    <div className="house-detail">
-      <div className="image-section">
-        <img className="dis-img" src={house.image_url} alt={house.name} />
+    <div className="details-container">
+      <div className='menu-back'>
+        <FontAwesomeIcon icon={faBars} onClick={openModal} className='fa-bars'/>
+        <button className="btn-book1" type="button" onClick={() => navigate('/')}>
+              Back
+        </button>
       </div>
-      <div className="house-info">
-        <h3 className="house-dtls">Title: {house.name}</h3>
-        <p className="house-dtls">House ID: {house.id}</p>
-        <p className="house-dtls">House Description: {house.description}</p>
-        <p className="house-dtls"> Rental Price: ${house.rental_fee}</p>
-        <p className="house-dtls">Type: {house.category}</p>
-        <p className="house-dtls">Location: {house.location}</p>
-        <p className="house-dtls">Date Built: {house.date_built}</p>
-        <div className="btn-detail">
-          <button className="btn-book1" type="button" onClick={handleReserve}>
-            Reserve
-          </button>
-          <button className="btn-book1" type="button" onClick={() => navigate('/')}>
-            &#8592; Back
-          </button>
+      
+      { isModalOpen && (
+        <div>
+          <Navigation closeModal={closeModal}/>  
+        </div>
+      )}
+      <div className="house-detail">  
+        <div className="image-section">
+          <img className="dis-img" src={house.image_url} alt={house.name} />
+        </div>
+        <div className="house-info">
+          <h3 className="house-dtls detail-title">{house.name}</h3>
+          <p className="house-dtls">{house.description}</p>
+          <p className="house-dtls"> Rental Price: ${house.rental_fee}</p>
+          <p className="house-dtls">Type: {house.category}</p>
+          <p className="house-dtls">Location: {house.location}</p>
+          <p className="house-dtls">Date Built: {house.date_built}</p>
+          <div className="btn-detail">
+            <button className="btn-book2" type="button" onClick={handleReserve}>
+              Reserve
+            </button> 
+          </div>
         </div>
       </div>
+
     </div>
+    
   );
 };
 

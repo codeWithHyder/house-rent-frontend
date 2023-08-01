@@ -1,0 +1,61 @@
+.house-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.menu-back {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.btn-book1 {
+    border: none;
+    background-color: transparent;
+}
+
+.btn-book2 {
+    border: 1px solid black;
+    background-color: transparent;
+    padding: 7px 14px;
+    margin-top: 25px;
+}
+
+.dis-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.house-info {
+    padding-top: 25px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.detail-title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    color: rgb(19, 12, 12);
+}
+
+.house-dtls {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+}
+
+@media screen and (min-width: 760px) {
+
+    .details-container {
+        display: flex;
+        flex-direction: row;
+        margin-left: 30%;
+        position: relative;
+    }
+}

@@ -44,17 +44,10 @@ const MainPage = () => {
 
   useEffect(() => {
     const handleInitialModalState = () => {
-      // Show the Navigation component by default for screen sizes greater than 760px
       setIsModalOpen(window.innerWidth > 760);
     };
-
-    // Call the function to handle the initial modal state
     handleInitialModalState();
-
-    // Add an event listener to update the state when the window is resized
     window.addEventListener('resize', handleInitialModalState);
-
-    // Clean up the event listener when the component is unmounted
     return () => {
       window.removeEventListener('resize', handleInitialModalState);
     };
