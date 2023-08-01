@@ -52,6 +52,17 @@ describe('AddHouse Component', () => {
         expect(screen.getByTestId("price-input")).toBeInTheDocument();
     });
 
+    // Check if the Rental fee element is rendered
+    it('date-input element is rendered', () =>{
+        renderWithRedux(<AddHouse />);
+        expect(screen.getByTestId("date-input")).toBeInTheDocument();
+    });
+
+    it('category-input element is rendered', () =>{
+        renderWithRedux(<AddHouse />);
+        expect(screen.getByTestId("category-input")).toBeInTheDocument();
+    });
+
     
 
     
