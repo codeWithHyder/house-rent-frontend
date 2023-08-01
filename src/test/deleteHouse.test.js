@@ -51,5 +51,10 @@ describe('DeleteHouse component', () => {
       },
     }));
   });
-
+  
+    // Ensure the component is rendered properly
+    it('should render correctly with houses data', () => {
+      expect(container).toBeInTheDocument();
+    });
+    
 });
