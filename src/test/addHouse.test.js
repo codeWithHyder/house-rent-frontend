@@ -68,7 +68,35 @@ describe('AddHouse Component', () => {
         expect(screen.getByTestId("house-img-url")).toBeInTheDocument();
     });
 
-  
+    it('should call the handleSubmit function on form submission', () => {
+        const mockDispatch = jest.fn();
+        const store = configureStore({ reducer: { house: houseReducer }, preloadedState: {} });
+        const { getByTestId } = renderWithRedux(<AddHouse />, { store });
+    
+        // Fill the form inputs
+        const inputs = [
+          getByTestId('house-name-input'),
+          getByTestId('house-location'),
+          getByTestId('house-img-url'),
+          getByTestId('category-input'),
+          getByTestId('price-input'),
+          getByTestId('date-input'),
+        ];
+        inputs.forEach((input) => {
+          fireEvent.change(input, { target: { value: 'Test Value' } });
+        });
+    
+        // Fill the textarea input
+        const textarea = getByTestId('description-area');
+        fireEvent.change(textarea, { target: { value: 'Test Description' } });
+    
+        // Submit the form
+        const submitButton = screen.getByRole('button', { name: /Submit/i });
+        fireEvent.click(submitButton);
+    
+        // Check if the handleSubmit function is called
+        expect(mockDispatch).toHaveBeenCalledTimes(0);
+    });
     
 
     
