@@ -46,6 +46,12 @@ describe('AddHouse Component', () => {
         expect(screen.getByTestId("house-location")).toBeInTheDocument();
     });
 
+    // Check if the price-input element is rendered
+    it('price-input input element is rendered', () =>{
+        renderWithRedux(<AddHouse />);
+        expect(screen.getByTestId("price-input")).toBeInTheDocument();
+    });
+
     
 
     
