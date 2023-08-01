@@ -61,6 +61,13 @@ describe('DeleteHouse component', () => {
         expect(screen.getByText('Delete a house')).toBeInTheDocument();
         expect(screen.getByTestId('fa-arrow-left')).toBeInTheDocument();
       });
+
+      // Ensure the delete-house-container elements are rendered
+      it('delete-house-container elements are rendered', () =>{
+        expect(screen.getByTestId('delete-house-container')).toBeInTheDocument();
+        expect(screen.getAllByTestId('delete-house-item')).toHaveLength(2);
+      });
+      
     
       
     
