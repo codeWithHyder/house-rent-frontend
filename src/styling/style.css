@@ -1,5 +1,5 @@
 /* code will be implemented soon */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -55,10 +55,10 @@
   padding-left: 0;
   padding-top: 0.2rem;
   border-radius: 1rem;
-}
+} */
 
 /* house details css */
-.house-info .house-title {
+/* .house-info .house-title {
   font-family: sans-serif;
   font-weight: 900;
   text-align: center;
@@ -91,10 +91,10 @@
 
 .reserve-page .btn-reserve {
   background-color: antiquewhite;
-}
+} */
 
 /* css for small devices */
-@media only screen and (max-device-width: 480px) {
+/* @media only screen and (max-device-width: 480px) {
   .main-container {
     width: 100%;
     height: 100%;
@@ -119,8 +119,6 @@
     text-align: center;
     font-family: sans-serif;
     font-weight: 900;
-
-    /* width: 23rem; */
     position: fixed;
     z-index: 2;
     margin-bottom: 13rem;
@@ -186,4 +184,4 @@
   .navbar {
     display: block;
   }
-}
+} */
