@@ -68,6 +68,12 @@ describe('DeleteHouse component', () => {
         expect(screen.getAllByTestId('delete-house-item')).toHaveLength(2);
       });
       
+      // Ensure the delete button is rendered
+      it('delete button is rendered', () =>{
+        expect(screen.getAllByTestId('delete-button')).toHaveLength(2);
+        expect(screen.getAllByTestId('delete-button')[0]).toHaveTextContent('Delete');
+        expect(screen.getAllByTestId('delete-button')[1]).toHaveTextContent('Delete');
+      });
     
       
     
