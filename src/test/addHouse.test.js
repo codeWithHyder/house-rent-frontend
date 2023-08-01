@@ -40,6 +40,13 @@ describe('AddHouse Component', () => {
         expect(screen.getByTestId("house-name-input")).toBeInTheDocument();
     });
 
+    // Check if the location element is rendered
+    it('location-input element is rendered', () =>{
+        renderWithRedux(<AddHouse />);
+        expect(screen.getByTestId("house-location")).toBeInTheDocument();
+    });
+
     
+
     
 });
