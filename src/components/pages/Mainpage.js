@@ -5,9 +5,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { css } from '@emotion/react';
 import { PacmanLoader } from 'react-spinners';
 import { getHouses } from '../../Redux/feature/houseSlice';
+import Navigation from '../sidebar/Navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import '../../styling/mainPage.css';
+import '../../styling/navbar.css'
 
 const MainPage = () => {
   const [sliderIndex, setSliderIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+      setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  
   const houses = useSelector((store) => store.house.houseData);
   const loading = useSelector((store) => store.house.isLoading);
   const dispatch = useDispatch();
@@ -41,33 +54,44 @@ const MainPage = () => {
   return (
     <>
       <div className="slider-container">
-        {/* Remove the slide-animation class */}
-        <ul className="main-page" style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
-          {houses.map((house) => (
-              <li key={house.id}>
-              <img className="img-house1" src={house.image_url} alt={house.id} />
-              <div className="house-item">
-                <div className="house-info">
-                  <p>  {house.category}</p>
-                  <p>{house.description}</p>
-                </div>
-                <Link to={`/house/${house.id}`}>
-                  <button className="btn-details" type="button">
-                    Details
-                  </button>
-                </Link>
-              </div>
-            </li>
-
-          ))}
-        </ul>
+        <FontAwesomeIcon icon={faBars} onClick={openModal}/>
+        { isModalOpen && (
+          <div>
+            <Navigation closeModal={closeModal}/>  
+          </div>
+        )}
+        <div className='slide-buttons-houses'>
+            <button type="button" className="arrow left-arrow" onClick={handlePrevSlide}>
+              &#10094;
+            </button>
+            <div>
+              <ul className="main-page" style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
+                {houses.map((house) => (
+                  <li key={house.id}>
+                    <img className="img-house1" src={house.image_url} alt={house.id} />
+                    <div className="house-item">
+                      <div className="house-info">
+                        <p>  {house.category}</p>
+                        <p>{house.description}</p>
+                      </div>
+                      <Link to={`/house/${house.id}`}>
+                        <button className="btn-details" type="button">
+                          Details
+                        </button>
+                      </Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+          <button type="button" className="arrow right-arrow" onClick={handleNextSlide}>
+            &#10095;
+          </button>
+        </div>     
       </div>
-      <button type="button" className="arrow left-arrow" onClick={handlePrevSlide}>
-        &#10094;
-      </button>
-      <button type="button" className="arrow right-arrow" onClick={handleNextSlide}>
-        &#10095;
-      </button>
+      
+      
     </>
   );
 };
