@@ -1,4 +1,4 @@
-/* mainPage.css */
+/* mainPage.css
 .main-page {
   width: 80%;
   display: flex;
@@ -46,7 +46,7 @@ li {
 
 /* slidebar css  */
 
-.main-page-container {
+/* .main-page-container {
   display: flex;
   overflow: hidden;
   position: relative;
@@ -130,11 +130,11 @@ li {
   100% {
     transform: translateX(calc(-100% * var(--index)));
   }
-}
+} */
 
 /* CSS FOR SMALL DEVICES */
 
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
   .main-page {
     width: 100%;
     display: flex;
@@ -194,4 +194,26 @@ li {
   .main-page li p {
     display: none;
   }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.slider-container {
+  display: flex;
+}
+
+.img-house1 {
+  width: 100px;
+}
+
+.slide-buttons-houses {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
