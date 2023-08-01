@@ -56,5 +56,12 @@ describe('DeleteHouse component', () => {
     it('should render correctly with houses data', () => {
       expect(container).toBeInTheDocument();
     });
+      // Ensure the delete-nav elements are rendered
+      it('delete-nav elements are rendered', () =>{
+        expect(screen.getByText('Delete a house')).toBeInTheDocument();
+        expect(screen.getByTestId('fa-arrow-left')).toBeInTheDocument();
+      });
+    
+      
     
 });
