@@ -4,8 +4,9 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faFacebookF, faVimeoV, faPinterestP } from '@fortawesome/free-brands-svg-icons';
 import { logoutUser } from '../../Redux/feature/UserSlice';
-import logo from '../../logo/g2hay relators_adobe_express.svg';
+// import logo from '../../logo/g2hay relators_adobe_express.svg';
 
 const Navigation = ({ closeModal }) => {
   const navigate = useNavigate();
@@ -102,8 +103,15 @@ const Navigation = ({ closeModal }) => {
             )}
           </ul>
         </div>
-        
-      </div>
+        <div className='social-links'>
+          <ul>
+            <li><FontAwesomeIcon icon={faTwitter} /></li>
+            <li><FontAwesomeIcon icon={faFacebookF} /></li>
+            <li><FontAwesomeIcon icon={faVimeoV} /></li>
+            <li><FontAwesomeIcon icon={faPinterestP} /></li>
+          </ul>        
+        </div>
+      </div> 
     </nav>
   );
 };

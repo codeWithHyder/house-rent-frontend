@@ -44,27 +44,34 @@ const MainPage = () => {
 
   if (loading) {
     return (
-      <div className="loading-container">
-        <PacmanLoader color={'#36D7B7'} css={override} size={25} />
-        <h1>Loading...</h1>
+      <div className='pacman-loading'>
+        <div className="loading-container">
+          <PacmanLoader color={'#36D7B7'} css={override} size={25} />
+          <h1>Loading...</h1>
+        </div>
       </div>
+      
     );
   }
 
   return (
     <>
       <div className="slider-container">
-        <FontAwesomeIcon icon={faBars} onClick={openModal}/>
+        <FontAwesomeIcon icon={faBars} onClick={openModal} className='fa-bars'/>
         { isModalOpen && (
           <div>
             <Navigation closeModal={closeModal}/>  
           </div>
         )}
         <div className='slide-buttons-houses'>
-            <button type="button" className="arrow left-arrow" onClick={handlePrevSlide} data-testid="prev-arrow">
+            <button type="button" className="arrow-left-arrow" onClick={handlePrevSlide} data-testid="prev-arrow">
               &#10094;
             </button>
-            <div>
+            <div className='home-title-head'>
+              <div className='available-houses'>
+                <h2 className="avail-title">Available Houses</h2>
+                <h4>Please select a house</h4>
+              </div>
               <ul className="main-page" style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
                 {houses.map((house) => (
                   <li key={house.id} data-testid="listitem">
@@ -83,9 +90,20 @@ const MainPage = () => {
                   </li>
                 ))}
               </ul>
+              <div className='arrow-container'>
+                <button type="button" className="mob-left-arrow" onClick={handlePrevSlide} data-testid="prev-arrow">
+                  &#10094;
+                </button>
+
+                <button type="button" className="mob-right-arrow" onClick={handleNextSlide} data-testid="nxt-arrow">
+                  &#10095;
+                </button>
+
+              </div>
             </div>
             
-          <button type="button" className="arrow right-arrow" onClick={handleNextSlide} data-testid="nxt-arrow">
+            
+          <button type="button" className="arrow-right-arrow" onClick={handleNextSlide} data-testid="nxt-arrow">
             &#10095;
           </button>
         </div>     

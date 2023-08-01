@@ -30,6 +30,7 @@ const initialState = {
 };
 
 // Create the Redux store with Redux Toolkit's configureStore
+
 const store = configureStore({
   reducer: {
     house: houseSlice, // Add other reducers here if needed

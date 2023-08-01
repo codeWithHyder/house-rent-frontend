@@ -141,3 +141,7 @@
   font-weight: bolder;
   color: black;
 }
+
+.social-links {
+  display: none;
+}
