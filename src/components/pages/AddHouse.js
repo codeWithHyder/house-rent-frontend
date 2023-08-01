@@ -48,6 +48,7 @@ const AddHouse = () => {
             type="text"
             placeholder="House Name"
             id="house-name-input"
+            data-testid="house-name-input"
             value={formData.name}
             onChange={handleChange}
           />
@@ -58,6 +59,7 @@ const AddHouse = () => {
             type="text"
             placeholder="Location"
             id="house-location"
+            data-testid="house-location"
             value={formData.location}
             onChange={handleChange}
           />
@@ -67,6 +69,7 @@ const AddHouse = () => {
             name="rental_fee"
             type="number"
             placeholder="Rental Fee"
+            data-testid="price-input"
             id="price-input"
             value={formData.rental_fee}
             onChange={handleChange}
@@ -79,6 +82,7 @@ const AddHouse = () => {
             type="date"
             placeholder="Date Built"
             id="date-input"
+            data-testid="date-input"
             value={formData.date_built}
             onChange={handleChange}
           />
@@ -89,6 +93,7 @@ const AddHouse = () => {
             type="text"
             placeholder="Category"
             id="category-input"
+            data-testid="category-input"
             value={formData.category}
             onChange={handleChange}
           />
@@ -99,6 +104,7 @@ const AddHouse = () => {
             type="text"
             placeholder="Image Url"
             id="house-img-url"
+            data-testid="house-img-url"
             value={formData.image_url}
             onChange={handleChange}
           />
@@ -109,6 +115,7 @@ const AddHouse = () => {
             type="text"
             placeholder="Description"
             id="description-area"
+            data-testid="description-area"
             value={formData.description}
             onChange={handleChange}
           />
