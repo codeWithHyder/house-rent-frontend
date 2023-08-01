@@ -61,13 +61,13 @@ const MainPage = () => {
           </div>
         )}
         <div className='slide-buttons-houses'>
-            <button type="button" className="arrow left-arrow" onClick={handlePrevSlide}>
+            <button type="button" className="arrow left-arrow" onClick={handlePrevSlide} data-testid="prev-arrow">
               &#10094;
             </button>
             <div>
               <ul className="main-page" style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
                 {houses.map((house) => (
-                  <li key={house.id}>
+                  <li key={house.id} data-testid="listitem">
                     <img className="img-house1" src={house.image_url} alt={house.id} />
                     <div className="house-item">
                       <div className="house-info">
@@ -85,7 +85,7 @@ const MainPage = () => {
               </ul>
             </div>
             
-          <button type="button" className="arrow right-arrow" onClick={handleNextSlide}>
+          <button type="button" className="arrow right-arrow" onClick={handleNextSlide} data-testid="nxt-arrow">
             &#10095;
           </button>
         </div>     
