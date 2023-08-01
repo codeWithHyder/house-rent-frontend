@@ -1,4 +1,4 @@
-/*.navbar {
+/* .navbar {
    display: flex;
   flex-direction: column;
   height: 100%;
@@ -11,8 +11,9 @@
   position: fixed;
   margin-top: 2.8rem;
   border-right: 1px solid rgb(226, 221, 221);
-  z-index: 2; }*/
-/* 
+  z-index: 2; } */
+
+/*
 .navbar li {
   margin-left: 1rem;
   width: 14rem;
@@ -60,6 +61,7 @@
 } */
 
 /* css for small screens */
+
 /* @media only screen and (max-device-width: 480px) {
   .navbar {
     display: block;
@@ -74,8 +76,6 @@
 
 .navbar-container {
   display: flex;
-  
- 
 }
 
 .navbar {
@@ -87,26 +87,26 @@
   padding-left: 9%;
   height: 100vh;
   gap: 10%;
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
+  width: 100%;
   overflow: auto;
 }
 
 .nav-itm-container {
   margin-top: 20%;
+  font-size: larger;
 }
 
-.nav-itm-container li{
+.nav-itm-container li {
   font-size: xx-large;
   padding: 5%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border-bottom: 1px solid rgb(95, 94, 94);
   margin-right: 10%;
 }
-
 
 .fincap-logo {
   color: black;
@@ -123,11 +123,6 @@
   width: 100%;
   margin-left: 0;
   padding-left: 0;
-}
-
-.nav-itm-container {
-  font-size: larger;
-  /* padding-left: 5%; */
 }
 
 .nav-close {
