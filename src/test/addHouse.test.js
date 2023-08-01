@@ -21,3 +21,18 @@ const renderWithRedux = (
     store,
 });
 
+describe('AddHouse Component', () => {
+    it('should render correctly', () => {
+      renderWithRedux(<AddHouse />);
+  
+      // Check if the header is rendered
+      const headerElement = screen.getByText(/Add House/i);
+      expect(headerElement).toBeInTheDocument();
+  
+      // Check if the input elements are rendered
+      const inputElements = screen.getAllByRole('textbox');
+      expect(inputElements).toHaveLength(5);
+    });
+
+    
+});
