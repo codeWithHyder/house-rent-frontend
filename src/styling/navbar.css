@@ -175,4 +175,8 @@
   .fa-close {
     display: none;
   }
+  
+  .nav-container {
+    width: 100%;
+  }
 } 
