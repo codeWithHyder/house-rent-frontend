@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
+import { TbLogout } from 'react-icons/tb';
 import { logoutUser } from '../../Redux/feature/UserSlice';
 import logo from '../../logo/g2hay relators_adobe_express.svg';
 
@@ -90,10 +91,11 @@ const Navigation = ({ closeModal }) => {
               </>
             )}
             {token ? (
-              <li>
+              <li className="log_btn">
                 <button className="logout-btn" type="button" onClick={handleLogout}>
                   Logout
-                </button>
+                  <TbLogout />
+            </button>
               </li>
             ) : (
               <li>
