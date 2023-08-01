@@ -313,3 +313,22 @@ li {
   width: 30px;
   font-weight: bolder;
 }
+
+@media screen and (min-width: 760px) {
+  .fa-bars {
+    display: none;
+  }
+
+  .slide-buttons-houses {
+    display: flex;
+    align-items: end;
+  }
+
+  .slider-container {
+    width: 70%;
+    margin-left: 30%;
+  }
+
+  
+  
+}
