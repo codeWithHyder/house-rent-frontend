@@ -34,5 +34,12 @@ describe('AddHouse Component', () => {
       expect(inputElements).toHaveLength(5);
     });
 
+    // Check if the name input element is rendered
+    it('name input element is rendered', () =>{
+        renderWithRedux(<AddHouse />);
+        expect(screen.getByTestId("house-name-input")).toBeInTheDocument();
+    });
+
+    
     
 });
