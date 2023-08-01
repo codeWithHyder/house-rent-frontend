@@ -82,3 +82,21 @@ const store = configureStore({
         expect(arrowElement).toBeInTheDocument();
     });
 });
+
+
+test('renders prev arrow', async () => {
+    const history = createMemoryHistory();
+  
+    render(
+        <Provider store={store}>
+            <MemoryRouter history={history}>
+                <MainPage />
+            </MemoryRouter>
+      </Provider>
+    );
+  
+    await waitFor(() => {
+        const arrowElement = screen.queryByTestId('prev-arrow');
+        expect(arrowElement).toBeInTheDocument();
+    });
+});
