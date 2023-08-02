@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {
-  FaEnvelope, FaUser, FaLock,
-} from 'react-icons/fa';
+import { FaEnvelope, FaUser, FaLock } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { signUp } from '../../Redux/feature/regestrationSlice';
 
@@ -18,11 +16,13 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signUp({
-      name,
-      email,
-      password,
-    }));
+    dispatch(
+      signUp({
+        name,
+        email,
+        password,
+      }),
+    );
     setIsSignedUp(true);
   };
 
@@ -66,7 +66,7 @@ const Register = () => {
             type="text"
             onChange={(e) => setName(e.target.value)}
             value={name}
-            placeholder=" Full Name"
+            placeholder="UserName"
           />
         </div>
         <div className="input-container">
@@ -101,7 +101,6 @@ const Register = () => {
       </form>
       {renderMessage()}
     </section>
-
   );
 };
 
