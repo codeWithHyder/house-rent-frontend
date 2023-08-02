@@ -59,7 +59,7 @@ The goal of this project is to display the ability to implement a full stack web
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- it will be implemented soon
+- [Live Demo](https://house-rent-new5.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
