@@ -17,23 +17,21 @@ import setupAxiosInterceptors from './helpers/setupAxiosInterceptors';
 
 setupAxiosInterceptors();
 
-function App() {
-  return (
-    <Router>
-      <div className="main-container">
-        <Routes>
-          <Route path="/sign_in" element={<Login />} />
-          <Route path="/sign_up" element={<Register />} />
-          <Route path="/myreservations" element={<MyReservation />} />
-          <Route path="/addhouse" element={<AddHouse />} />
-          <Route path="/deletehouse" element={<DeleteHouse />} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="/house/:id" element={<HouseDetails />} />
-          <Route path="/reserve/:id" element={<ReservePage />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <div className="main-container">
+      <Routes>
+        <Route path="/sign_in" element={<Login />} />
+        <Route path="/sign_up" element={<Register />} />
+        <Route path="/myreservations" element={<MyReservation />} />
+        <Route path="/addhouse" element={<AddHouse />} />
+        <Route path="/deletehouse" element={<DeleteHouse />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/house/:id" element={<HouseDetails />} />
+        <Route path="/reserve/:id" element={<ReservePage />} />
+      </Routes>
+    </div>
+  </Router>
+);
 
 export default App;
