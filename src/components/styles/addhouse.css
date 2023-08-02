@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;1,100&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Mono&family=Poppins:wght@100;200;300;400;500;600&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background: #ecf0f1;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: rgba(141, 197, 10, 0.788);
+}
+
+.add-house-form-container {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: rgb(32, 17, 17);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-bottom: 30px;
+}
+
+.add-house-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%; /* Change the width to 90% for mobile devices */
+  max-width: 400px; /* Add a maximum width to the form */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.add-house-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.add-house-form input,
+.add-house-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 8px;
+}
+
+.add-house-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.add-house-form button {
+  background-color: #a9cc1f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 22px;
+  margin-top: 2px;
+  transition: background-color 0.3s;
+}
+
+.add-house-form button:hover {
+  background-color: #96bf01;
+}
+
+/* Optional: Add a border to the input fields when focused */
+.add-house-form input:focus,
+.add-house-form textarea:focus {
+  border-color: #96bf01;
+  box-shadow: 0 0 5px #96bf01;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+  .add-house-form-container {
+    gap: 20px;
+  }
+
+  .add-house-form {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .add-house-form button {
+    font-size: 18px;
+  }
+}

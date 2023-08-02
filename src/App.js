@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainPage from './components/pages/Mainpage';
+import HouseDetails from './components/pages/HouseDetails';
+import ReservePage from './components/pages/ReservePage';
+import DeleteHouse from './components/pages/DeleteHouse';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import AddHouse from './components/pages/AddHouse';
+import MyReservation from './components/pages/MyReservation';
+import './styling/houseReserve.css';
+import setupAxiosInterceptors from './helpers/setupAxiosInterceptors';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+setupAxiosInterceptors();
+
+const App = () => (
+  <Router>
+    <div className="main-container">
+      <Routes>
+        <Route path="/sign_in" element={<Login />} />
+        <Route path="/sign_up" element={<Register />} />
+        <Route path="/myreservations" element={<MyReservation />} />
+        <Route path="/addhouse" element={<AddHouse />} />
+        <Route path="/deletehouse" element={<DeleteHouse />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/house/:id" element={<HouseDetails />} />
+        <Route path="/reserve/:id" element={<ReservePage />} />
+      </Routes>
     </div>
-  );
-}
+  </Router>
+);
 
 export default App;

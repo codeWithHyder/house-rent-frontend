@@ -1,0 +1,126 @@
+/* Common styles for both large and small devices */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;1,100&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Mono&family=Poppins:wght@100;200;300;400;500;600&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background: #ecf0f1;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.delete-house {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  color: white;
+  padding: 1% 2%;
+  margin-bottom: 20px;
+}
+
+.fa-arrow-left {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.delete-house-container {
+  list-style: none;
+  padding: 0;
+  width: 50%;
+
+  /* max-width: 100%; Limit the maximum width for large screens */
+}
+
+.delete-house-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #96bf01; /* Light green background color */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-house h1 {
+  border: none;
+  font-size: 24px; /* Increase the font size for better readability */
+  margin: 0;
+  color: rgba(141, 197, 10, 0.788);
+}
+
+.delete-items-details {
+  border-left: 1px solid #ccc;
+  padding: 0 15px;
+}
+
+.delete-house-items img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.delete-house-items button {
+  background-color: #eff0ea;
+  color: #96bf01;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+.delete-house-items button:hover {
+  background-color: #6e8811;
+}
+
+.delete-house-items button:focus {
+  outline: none;
+}
+
+.delete-house-items span {
+  margin-right: 10px;
+}
+
+/* CSS for small devices */
+@media only screen and (max-width: 480px) {
+  .delete-house-container {
+    margin-left: 0;
+    width: 80%;
+  }
+
+  .delete-house-items {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* Add padding for better spacing on mobile */
+  }
+
+  .delete-house h1 {
+    font-size: 20px; /* Decrease the font size for mobile */
+  }
+
+  .delete-items-details {
+    border-left: none; /* Remove the left border on mobile */
+    padding: 15px 0; /* Add more padding */
+  }
+
+  .delete-house-items img {
+    margin-bottom: 10px; /* Add spacing below the image on mobile */
+  }
+}

@@ -1,0 +1,134 @@
+/* Common styles for both desktop and mobile versions */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  list-style: none;
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  border-right: 1px solid rgb(226, 221, 221);
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+
+.nav-itm-container {
+  padding-top: 100px;
+}
+
+.nav-itm-container li {
+  margin-left: 1rem;
+  width: 14rem;
+  height: 3rem;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.nav-itm-container li a {
+  display: block;
+  width: 95%;
+  text-decoration: none;
+  font-family: sans-serif;
+  color: rgb(3, 3, 3);
+  font-weight: bold;
+  padding: 0.8rem 3rem 0 3rem;
+}
+
+.nav-itm-container li a:hover {
+  height: 3rem;
+  width: 90%;
+  background-color: rgba(141, 197, 10, 0.788);
+  transform: scale(1.01);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 0.3rem;
+  color: white;
+}
+
+.nav-itm-containerli img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 3rem;
+}
+
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: darkred;
+}
+
+.fa-close {
+  display: none;
+}
+
+.social-links ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-links li {
+  font-size: 20px;
+  color: #000;
+  height: 3rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    background-color: white;
+    color: white;
+    display: flex;
+    padding-top: 1%;
+    height: 100vh;
+    gap: 10%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .nav-itm-container {
+    padding-top: 100px;
+
+    /* padding-left: 0px; */
+  }
+
+  .nav-items {
+    width: 200px;
+    margin-left: 0;
+    padding-left: 30px;
+  }
+
+  .fa-close {
+    display: block;
+  }
+
+  .social-links {
+    display: none;
+  }
+
+  .fincap-logo {
+    max-height: 5em !important;
+    width: 80%;
+  }
+
+  .nav-close {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 110%;
+    padding-top: 10px;
+  }
+}
