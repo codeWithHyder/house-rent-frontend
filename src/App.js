@@ -6,12 +6,8 @@ import ReservePage from './components/pages/ReservePage';
 import DeleteHouse from './components/pages/DeleteHouse';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-// import Navigation from './components/sidebar/Navigation';
 import AddHouse from './components/pages/AddHouse';
 import MyReservation from './components/pages/MyReservation';
-// import './styling/style.css';
-// import './styling/navbar.css';
-// import './styling/mainPage.css';
 import './styling/houseReserve.css';
 import setupAxiosInterceptors from './helpers/setupAxiosInterceptors';
 

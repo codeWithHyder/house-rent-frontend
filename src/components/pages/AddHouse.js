@@ -121,6 +121,11 @@ const AddHouse = () => {
           />
         </label>
         <button type="submit">Add House</button>
+        <Link to="/">
+          <button type="button" className="back-btn">
+            &#8592;
+          </button>
+        </Link>
       </form>
     </div>
   );
