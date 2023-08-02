@@ -59,9 +59,8 @@ The goal of this project is to display the ability to implement a full stack web
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a src='https://house-rent1.onrender.com/'></a>
 
-- Will be implemented soon
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
