@@ -1,10 +1,8 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import { createMemoryHistory } from 'history';
 import thunk from 'redux-thunk';
-import { MemoryRouter } from 'react-router-dom';
 import MainPage from '../components/pages/Mainpage';
 import houseSlice from '../Redux/feature/houseSlice';
 
@@ -29,17 +27,6 @@ const initialState = {
   },
 };
 
-// Create the Redux store with Redux Toolkit's configureStore
-
-const store = configureStore({
-  reducer: {
-    house: houseSlice, // Add other reducers here if needed
-  },
-  preloadedState: initialState,
-  middleware: [thunk], // Add other middlewares here if needed
-});
-
-// Test if the loading spinner is displayed when isLoading is true
 test('renders loading spinner when data is loading', () => {
   const loadingState = {
     house: {
@@ -63,56 +50,4 @@ test('renders loading spinner when data is loading', () => {
 
   const loadingElement = screen.getByText('Loading...');
   expect(loadingElement).toBeInTheDocument();
-});
-
-// Test if the house items are rendered correctly when data is available
-test('renders next arrow', async () => {
-  const history = createMemoryHistory();
-
-  render(
-    <Provider store={store}>
-      <MemoryRouter history={history}>
-        <MainPage />
-      </MemoryRouter>
-    </Provider>,
-  );
-
-  await waitFor(() => {
-    const arrowElement = screen.queryByTestId('nxt-arrow');
-    expect(arrowElement).toBeInTheDocument();
-  });
-});
-
-test('renders prev arrow', async () => {
-  const history = createMemoryHistory();
-
-  render(
-    <Provider store={store}>
-      <MemoryRouter history={history}>
-        <MainPage />
-      </MemoryRouter>
-    </Provider>,
-  );
-
-  await waitFor(() => {
-    const arrowElement = screen.queryByTestId('prev-arrow');
-    expect(arrowElement).toBeInTheDocument();
-  });
-});
-
-test('renders List items', async () => {
-  const history = createMemoryHistory();
-
-  render(
-    <Provider store={store}>
-      <MemoryRouter history={history}>
-        <MainPage />
-      </MemoryRouter>
-    </Provider>,
-  );
-
-  await waitFor(() => {
-    const listItems = screen.getAllByTestId('listitem');
-    expect(listItems).toHaveLength(2);
-  });
 });

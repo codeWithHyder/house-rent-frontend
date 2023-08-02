@@ -12,6 +12,7 @@
 .fa-bars {
   display: none;
 }
+
 /* mainPage.css */
 .main-page {
   width: 80%;
@@ -303,10 +304,11 @@
     transform: translateX(-50%);
     transition: left 0.5s ease-in-out;
   }
-  
+
   .main-page li {
     margin-bottom: 114px;
   }
+
   .main-page li p {
     display: none;
   }

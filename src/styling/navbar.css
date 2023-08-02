@@ -19,6 +19,7 @@
 .nav-itm-container {
   padding-top: 100px;
 }
+
 .nav-itm-container li {
   margin-left: 1rem;
   width: 14rem;
@@ -69,11 +70,10 @@
   display: none;
 }
 
-
 .social-links ul {
- display: flex;
- align-items: center;
- gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .social-links li {
@@ -82,8 +82,9 @@
   height: 3rem;
   text-decoration: none;
   cursor: pointer;
-
 }
+
+
 
 
 
@@ -101,13 +102,10 @@
     width: 100%;
     overflow: auto;
   }
-  
-  .house_mobile {
-    display: none;
-  }
+
   .nav-itm-container {
     padding-top: 100px;
-    text-align: left;
+
     /* padding-left: 0px; */
   }
 
@@ -116,12 +114,26 @@
     margin-left: 0;
     padding-left: 30px;
   }
-  
+
   .fa-close {
     display: block;
   }
 
   .social-links {
-     display: none;
+    display: none;
+  }
+
+  .fincap-logo {
+    max-height: 5em !important;
+    width: 80%;
+  }
+
+  .nav-close {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 110%;
+    padding-top: 10px;
   }
 }

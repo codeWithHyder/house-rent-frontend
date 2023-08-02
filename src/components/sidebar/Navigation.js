@@ -37,7 +37,7 @@ const Navigation = ({ closeModal }) => {
       <div className="navbar">
         <div className='nav-items'>
           <div className="nav-close">
-            <p className='fincap-logo'>FINCAP HOUSE RENT</p>
+            <h1 className='fincap-logo'> HOME AGENCY</h1>
             <FontAwesomeIcon icon={faX} onClick={closeModal} className="fa-close" />  
           </div>
           <ul className="nav-itm-container">
@@ -89,9 +89,7 @@ const Navigation = ({ closeModal }) => {
                     DeleteHouse
                   </NavLink>
                 </li>
-              </>
-            )}
-            {token ? (
+                {token ? (
               <li className="log_btn">
                 <button className="logout-btn" type="button" onClick={handleLogout}>
                   Logout
@@ -102,6 +100,8 @@ const Navigation = ({ closeModal }) => {
               <li>
                 <NavLink to="/sign_in">Log In</NavLink>
               </li>
+            )}
+              </>
             )}
           </ul>
         </div>

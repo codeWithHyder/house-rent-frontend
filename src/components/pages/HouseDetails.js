@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
+import { BiHomeSmile } from 'react-icons/bi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faChevronRight, faGear } from '@fortawesome/free-solid-svg-icons';
 import { setHouses } from '../../Redux/feature/houseSlice';
@@ -76,7 +77,7 @@ const HouseDetails = () => {
       <div className='menu-back'>
         <FontAwesomeIcon icon={faBars} onClick={openModal} className='fa-bars-details'/>
         <button className="btn-book1" type="button" onClick={() => navigate('/')}>
-              Back
+              <BiHomeSmile />
         </button>
       </div>
       

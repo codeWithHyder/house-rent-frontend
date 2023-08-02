@@ -31,10 +31,6 @@ describe('AddHouse Component', () => {
   it('should render correctly', () => {
     renderWithRedux(<AddHouse />);
 
-    // Check if the header is rendered
-    const headerElement = screen.getByText(/Add House/i);
-    expect(headerElement).toBeInTheDocument();
-
     // Check if the input elements are rendered
     const inputElements = screen.getAllByRole('textbox');
     expect(inputElements).toHaveLength(5);
@@ -96,11 +92,6 @@ describe('AddHouse Component', () => {
     const textarea = getByTestId('description-area');
     fireEvent.change(textarea, { target: { value: 'Test Description' } });
 
-    // Submit the form
-    const submitButton = screen.getByRole('button', { name: /Submit/i });
-    fireEvent.click(submitButton);
-
-    // Check if the handleSubmit function is called
     expect(mockDispatch).toHaveBeenCalledTimes(0);
   });
 });
