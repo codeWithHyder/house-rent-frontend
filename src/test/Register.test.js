@@ -20,7 +20,7 @@ describe('Register', () => {
     );
 
     const emailInput = getByPlaceholderText('example@gmail.com');
-    const fullNameInput = getByPlaceholderText('Full Name');
+    const fullNameInput = getByPlaceholderText('UserName');
     const passwordInput = getByPlaceholderText('Password');
 
     // Fill in the form inputs
