@@ -1,19 +1,18 @@
-/* eslint-disable */
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
-import { faTwitter, faFacebookF, faVimeoV, faPinterestP } from '@fortawesome/free-brands-svg-icons';
+import {
+  faTwitter, faFacebookF, faVimeoV, faPinterestP,
+} from '@fortawesome/free-brands-svg-icons';
 import { TbLogout } from 'react-icons/tb';
 import { logoutUser } from '../../Redux/feature/UserSlice';
-// import logo from '../../logo/g2hay relators_adobe_express.svg';
 
 const Navigation = ({ closeModal }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const token = localStorage.getItem('token');
-
   const handleLogout = async () => {
     if (token) {
       try {
@@ -26,23 +25,21 @@ const Navigation = ({ closeModal }) => {
       }
     }
   };
-
   const disableLinkStyle = {
     pointerEvents: 'none',
     color: 'grey',
   };
-
   return (
-    <nav className="navbar-container"> 
+    <nav className="navbar-container">
       <div className="navbar">
-        <div className='nav-items'>
+        <div className="nav-items">
           <div className="nav-close">
-            <h1 className='fincap-logo'> HOME AGENCY</h1>
-            <FontAwesomeIcon icon={faX} onClick={closeModal} className="fa-close" />  
+            <h1 className="fincap-logo"> HOME AGENCY</h1>
+            <FontAwesomeIcon icon={faX} onClick={closeModal} className="fa-close" />
           </div>
           <ul className="nav-itm-container">
-            <li className='house_mobile'>
-              <NavLink to="/"  activeClassName="active-link" exact>
+            <li className="house_mobile">
+              <NavLink to="/" activeClassName="active-link" exact>
                 House
               </NavLink>
             </li>
@@ -89,33 +86,40 @@ const Navigation = ({ closeModal }) => {
                     DeleteHouse
                   </NavLink>
                 </li>
-                {token ? (
+              </>
+            )}
+            {token ? (
               <li className="log_btn">
                 <button className="logout-btn" type="button" onClick={handleLogout}>
                   Logout
                   <TbLogout />
-            </button>
+                </button>
               </li>
             ) : (
               <li>
                 <NavLink to="/sign_in">Log In</NavLink>
               </li>
             )}
-              </>
-            )}
           </ul>
         </div>
-        <div className='social-links'>
+        <div className="social-links">
           <ul>
-            <li><FontAwesomeIcon icon={faTwitter} /></li>
-            <li><FontAwesomeIcon icon={faFacebookF} /></li>
-            <li><FontAwesomeIcon icon={faVimeoV} /></li>
-            <li><FontAwesomeIcon icon={faPinterestP} /></li>
-          </ul>        
+            <li>
+              <FontAwesomeIcon icon={faTwitter} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faFacebookF} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faVimeoV} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faPinterestP} />
+            </li>
+          </ul>
         </div>
-      </div> 
+      </div>
     </nav>
   );
 };
-
 export default Navigation;
