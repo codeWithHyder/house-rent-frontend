@@ -52,3 +52,4 @@ test('renders loading spinner when data is loading', () => {
   const loadingElement = screen.getByText('Loading...');
   expect(loadingElement).toBeInTheDocument();
 });
+
