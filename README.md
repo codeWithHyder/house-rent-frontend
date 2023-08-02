@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-
   <h3><b>Hello Front End App </b></h3>
 
 </div>
@@ -38,7 +37,6 @@ The goal of this project is to display the ability to implement a full stack web
 - javaScript.
 - React & redux
 
-
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
@@ -62,7 +60,6 @@ The goal of this project is to display the ability to implement a full stack web
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - it will be implemented soon
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,7 +110,6 @@ to build this project from the source folder using webpack
 
 in order to start a server and deploy the project localy
 
-
 ### Deployment <a name="triangular_flag_on_post-deployment"></a>
 
 You can deploy this project using: github pages or any host of your choice
@@ -137,7 +133,6 @@ You can deploy this project using: github pages or any host of your choice
 - GitHub: [Yosefgeda](https://github.com/Yosefgeda)
 - LinkedIn: [Yosefgeda](https://www.linkedin.com/in/yosefgeda)
 
-
 👤 **Alexander Ssenyondo**
 
 - GitHub: [@alexiscyber14](https://github.com/alexiscyber14)
@@ -151,7 +146,6 @@ You can deploy this project using: github pages or any host of your choice
 - LinkedIn: [Grace Htet](https://linkedin.com/in/thirihtethtetaung)
 - Twitter: [Grace Htet](https://twitter.com/Grace_Htet4)
 - Angelist: [Grace Htet](https://wellfound.com/u/thiri-htet)
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -180,7 +174,7 @@ If you like this project please give it a ⭐️.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - [the whole Microverse Community](https://www.microverse.org/)
-
+- [The template design Owner](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

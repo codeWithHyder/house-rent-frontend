@@ -13,10 +13,13 @@ export const getHouses = createAsyncThunk('houses/getHouses', async () => {
   }
 });
 
-export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseData, user_id) => {
-  user_id = JSON.parse(localStorage.getItem('user')).id;
+export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseData) => {
+  const user_id = JSON.parse(localStorage.getItem('user')).id;
   try {
-    const response = await axios.post(`https://house-rent-api.onrender.com/api/v1/houses?user_id=${user_id}`, newHouseData);
+    const response = await axios.post(
+      `https://house-rent-api.onrender.com/api/v1/houses?user_id=${user_id}`,
+      newHouseData,
+    );
     localStorage.setItem('houses', JSON.stringify(response.data));
     return response.data;
   } catch (error) {
@@ -25,10 +28,12 @@ export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseDa
   }
 });
 
-export const deleteHouse = createAsyncThunk('house/deleteHouse', async (id, user_id) => {
-  user_id = JSON.parse(localStorage.getItem('user')).id;
+export const deleteHouse = createAsyncThunk('house/deleteHouse', async (id) => {
+  const user_id = JSON.parse(localStorage.getItem('user')).id;
   try {
-    await axios.delete(`https://house-rent-api.onrender.com/api/v1/houses/${id}?user_id=${user_id}`);
+    await axios.delete(
+      `https://house-rent-api.onrender.com/api/v1/houses/${id}?user_id=${user_id}`,
+    );
     return id;
   } catch (error) {
     console.log(error);

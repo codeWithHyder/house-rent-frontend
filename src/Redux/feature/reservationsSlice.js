@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'https://house-rent-api.onrender.com/api/v1/houses';
+const baseURL = 'https://house-rent-api.onrender.com/api/v1';
 
 export const createReservation = createAsyncThunk(
   'reservations/createReservation',
   async ({ houseId, reservationDate, location }) => {
     try {
-      const response = await axios.post(`${baseURL}/${houseId}/reservations`, {
+      const response = await axios.post(`${baseURL}/houses/${houseId}/reservations`, {
         reservation: {
           house_id: houseId,
           reservation_date: reservationDate,
@@ -21,17 +21,14 @@ export const createReservation = createAsyncThunk(
   },
 );
 
-export const fetchReservations = createAsyncThunk(
-  'reservations/fetchReservations',
-  async (houseId) => {
-    try {
-      const response = await axios.get(`${baseURL}/${houseId}/reservations`);
-      return response.data;
-    } catch (error) {
-      throw new Error(error.response.data.error);
-    }
-  },
-);
+export const fetchReservations = createAsyncThunk('reservations/fetchReservations', async () => {
+  try {
+    const response = await axios.get(`${baseURL}/reservations`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response.data.error);
+  }
+});
 
 const reservationSlice = createSlice({
   name: 'reservations',

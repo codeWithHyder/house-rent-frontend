@@ -10,10 +10,8 @@ const MyReservation = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Object.values(houses).forEach((house) => {
-      dispatch(fetchReservations(house.id));
-    });
-  }, [dispatch]);
+    dispatch(fetchReservations());
+  }, []);
 
   const formatDate = (dateString) => {
     if (!dateString) return '';
