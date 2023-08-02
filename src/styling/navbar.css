@@ -83,11 +83,6 @@
   text-decoration: none;
   cursor: pointer;
 }
-
-
-
-
-
 /* Mobile version */
 @media (max-width: 767px) {
   .navbar {
