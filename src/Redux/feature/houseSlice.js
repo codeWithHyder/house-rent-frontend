@@ -8,7 +8,6 @@ export const getHouses = createAsyncThunk('houses/getHouses', async () => {
     localStorage.setItem('houses', JSON.stringify(response.data));
     return response.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 });
@@ -23,7 +22,6 @@ export const addHouseApi = createAsyncThunk('houses/addHouse', async (newHouseDa
     localStorage.setItem('houses', JSON.stringify(response.data));
     return response.data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 });
@@ -36,7 +34,6 @@ export const deleteHouse = createAsyncThunk('house/deleteHouse', async (id) => {
     );
     return id;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 });
