@@ -93,7 +93,7 @@ const ReservePage = () => {
           Reserve
         </button>
         <Link to="/">
-          <button type="button" className="btn-back">
+          <button type="button" className="btn-reserve">
             &#8592; Back
           </button>
         </Link>

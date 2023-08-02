@@ -27,9 +27,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 7rem;
+  align-items: center;
+  margin-top: 4rem;
   position: absolute;
-  margin-left: 30%;
+  margin-left: 35%;
   row-gap: 1.5rem;
 }
 
@@ -39,7 +40,6 @@
   align-items: center;
   justify-content: center;
   padding-top: 10%;
-  margin-left: 16%;
 }
 
 .title {
@@ -55,16 +55,16 @@
     border-collapse: collapse;
     position: relative;
     z-index: 2;
-    margin-top: 10rem;
+    margin-top: 2rem;
   }
 
   .center-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10rem;
+    margin-top: 5rem;
     position: absolute;
-    margin-left: 15%;
+    margin-left: 1%;
     row-gap: 1.5rem;
   }
 }

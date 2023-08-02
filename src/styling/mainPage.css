@@ -1,4 +1,19 @@
-/* mainPage.css
+/* mainPage.css */
+
+/* ... (previously provided CSS for other elements) ... */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.fa-bars {
+  display: none;
+}
+
+/* mainPage.css */
 .main-page {
   width: 80%;
   display: flex;
@@ -7,15 +22,9 @@
   padding: 0;
   margin-top: 7rem;
   transition: all 0.3s ease;
-  margin-left: 20%;
+  margin-left: 40%;
   column-gap: 5rem;
   z-index: -1;
-}
-
-li {
-  min-width: 100%;
-  flex-shrink: 0;
-  margin-right: 20px;
 }
 
 .main-page li {
@@ -27,6 +36,9 @@ li {
   padding: 0.4rem;
   margin-bottom: 5rem;
   background-color: rgb(255, 254, 254);
+  min-width: 100%;
+  flex-shrink: 0;
+  margin-right: 20px;
 }
 
 .main-page li .img-house1 {
@@ -37,16 +49,24 @@ li {
   padding-bottom: 0;
 }
 
-.main-page li p {
-  width: 10rem;
+.main-page li h3 {
+  width: 12rem;
   height: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.main-page li p {
+  width: 12rem;
+  height: 0.5rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
 /* slidebar css  */
 
-/* .main-page-container {
+.main-page-container {
   display: flex;
   overflow: hidden;
   position: relative;
@@ -130,7 +150,7 @@ li {
   100% {
     transform: translateX(calc(-100% * var(--index)));
   }
-} */
+}
 
 /* CSS FOR SMALL DEVICES */
 
@@ -194,26 +214,110 @@ li {
   .main-page li p {
     display: none;
   }
+
+  .fa-bars {
+    display: block;
+  }
 } */
 
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  color: black;
+@media only screen and (max-width: 480px) {
+  .main-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin-top: 7rem;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-left: auto;
+    column-gap: 2rem; /* Reduce the gap between houses on small devices */
+  }
+
+  .main-page li.img-house1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+  }
+
+  .main-page li h3,
+  .main-page li p {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
+
+  .arrow-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .arrow-container button {
+    border: none;
+    background-color: transparent;
+    color: black;
+    width: 30px;
+    font-weight: bolder;
+  }
 }
 
-.slider-container {
-  display: flex;
-}
+/* Media query for tablets */
+@media only screen and (max-width: 760px) {
+  .main-page {
+    margin-left: 10%;
+    column-gap: 3rem; /* Reduce the gap between houses on tablets */
+  }
 
-.img-house1 {
-  width: 100px;
-}
+  .slider-container {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: 60%;
+    margin-left: 10%;
+  }
 
-.slide-buttons-houses {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  .arrow-container {
+    margin-top: 10px;
+  }
+
+  .btn-details {
+    background-color: #96bf01;
+    width: 5rem;
+    height: 2.5rem;
+    outline: whitesmoke;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    border-radius: 1rem;
+    color: whitesmoke;
+    position: relative;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: left 0.5s ease-in-out;
+  }
+
+  .main-page li {
+    margin-bottom: 114px;
+  }
+
+  .main-page li p {
+    display: none;
+  }
+
+  .fa-bars {
+    display: block;
+    position: relative;
+    top: 30px;
+    right: 40px;
+    font-size: 25px;
+  }
 }
